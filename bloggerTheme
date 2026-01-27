@@ -1,0 +1,3453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' data-theme='light' expr:dir='data:blog.languageDirection' lang='ko' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=5' name='viewport'/>
+  <meta content='#141418' id='metaThemeColor' name='theme-color'/>
+  <meta content='light dark' name='color-scheme'/>
+  <meta content='strict-origin-when-cross-origin' name='referrer'/>
+  <meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='robots'/>
+  <meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='googlebot'/>
+  <meta content='ko_KR' property='og:locale'/>
+  <link href='//www.blogger.com' rel='dns-prefetch'/>
+  <link href='//img1.blogblog.com' rel='dns-prefetch'/>
+  <link href='//resources.blogblog.com' rel='dns-prefetch'/>
+  <link crossorigin='anonymous' href='https://www.blogger.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://img1.blogblog.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://resources.blogblog.com' rel='preconnect'/>
+  <link href='/sitemap.xml' rel='sitemap' type='application/xml'/>
+  
+  <b:include data='blog' name='all-head-content'/>
+  <b:if cond='data:blog.faviconUrl'>
+    <link expr:href='data:blog.faviconUrl' rel='icon'/>
+    <link expr:href='data:blog.faviconUrl' rel='apple-touch-icon'/>
+  </b:if>
+
+  <!-- SEO -->
+  <b:if cond='data:view.isPost'>
+    <title><data:blog.pageName/> - <data:blog.title/></title>
+    <meta expr:content='data:blog.pageName' property='og:title'/>
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+    <meta expr:content='data:blog.title' property='og:site_name'/>
+    <meta content='article' property='og:type'/>
+    <meta expr:content='data:post.author.name' name='author'/>
+    <meta expr:content='data:post.author.name' property='article:author'/>
+    <meta expr:content='data:post.timestampISO8601' property='article:published_time'/>
+    <meta expr:content='data:post.lastUpdatedISO8601' property='article:modified_time'/>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.pageName' name='twitter:title'/>
+    <b:if cond='data:post.snippet'>
+      <meta expr:content='data:post.snippet' name='description'/>
+      <meta expr:content='data:post.snippet' property='og:description'/>
+      <meta expr:content='data:post.snippet' name='twitter:description'/>
+    <b:else/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription' name='description'/>
+        <meta expr:content='data:blog.metaDescription' property='og:description'/>
+        <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+      <b:else/>
+        <b:if cond='data:blog.description'>
+          <meta expr:content='data:blog.description' name='description'/>
+          <meta expr:content='data:blog.description' property='og:description'/>
+          <meta expr:content='data:blog.description' name='twitter:description'/>
+        </b:if>
+      </b:if>
+    </b:if>
+    <b:if cond='data:blog.postImageThumbnailUrl'>
+      <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+      <meta expr:content='data:blog.postImageThumbnailUrl' name='twitter:image'/>
+      <meta expr:content='data:blog.pageName' property='og:image:alt'/>
+    </b:if>
+    <b:if cond='data:post.labels'>
+      <b:loop values='data:post.labels' var='label'>
+        <meta expr:content='data:label' property='article:tag'/>
+      </b:loop>
+    </b:if>
+  <b:else/>
+    <title><data:blog.pageTitle/></title>
+    <meta expr:content='data:blog.title' property='og:title'/>
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+    <meta expr:content='data:blog.title' property='og:site_name'/>
+    <meta content='website' property='og:type'/>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.title' name='twitter:title'/>
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' name='description'/>
+      <meta expr:content='data:blog.metaDescription' property='og:description'/>
+      <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+    <b:else/>
+      <b:if cond='data:blog.description'>
+        <meta expr:content='data:blog.description' name='description'/>
+        <meta expr:content='data:blog.description' property='og:description'/>
+        <meta expr:content='data:blog.description' name='twitter:description'/>
+      </b:if>
+    </b:if>
+    <b:if cond='data:blog.logoUrl'>
+      <meta expr:content='data:blog.logoUrl' property='og:image'/>
+      <meta expr:content='data:blog.logoUrl' name='twitter:image'/>
+      <meta expr:content='data:blog.title' property='og:image:alt'/>
+    </b:if>
+  </b:if>
+
+  <b:if cond='data:view.isPost'>
+    <script type='application/ld+json'>
+      {
+        &quot;@context&quot;: &quot;https://schema.org&quot;,
+        &quot;@type&quot;: &quot;BlogPosting&quot;,
+        &quot;headline&quot;: &quot;<data:blog.pageName/>&quot;,
+        &quot;description&quot;: &quot;<data:post.snippet/>&quot;,
+        &quot;mainEntityOfPage&quot;: {&quot;@type&quot;: &quot;WebPage&quot;, &quot;@id&quot;: &quot;<data:blog.canonicalUrl/>&quot;},
+        &quot;author&quot;: {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;<data:post.author.name/>&quot;},
+        &quot;publisher&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;<data:blog.title/>&quot;, &quot;logo&quot;: {&quot;@type&quot;: &quot;ImageObject&quot;, &quot;url&quot;: &quot;<data:blog.logoUrl/>&quot;}},
+        &quot;datePublished&quot;: &quot;<data:post.timestampISO8601/>&quot;,
+        &quot;dateModified&quot;: &quot;<data:post.lastUpdatedISO8601/>&quot;,
+        &quot;image&quot;: &quot;<data:blog.postImageThumbnailUrl/>&quot;
+      }
+    </script>
+  <b:else/>
+    <script type='application/ld+json'>
+      {
+        &quot;@context&quot;: &quot;https://schema.org&quot;,
+        &quot;@type&quot;: &quot;WebSite&quot;,
+        &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+        &quot;url&quot;: &quot;<data:blog.canonicalUrl/>&quot;,
+        &quot;description&quot;: &quot;<data:blog.metaDescription/>&quot;
+      }
+    </script>
+  </b:if>
+  
+  <b:skin><![CDATA[
+    /* * [DESIGN SYSTEM 2026 v26.0 - Clean Build] */
+    :root {
+      --bg-body: #0a0a0c; --bg-surface: #141418; --bg-surface-glass: rgba(20, 20, 24, 0.95);
+      --bg-card: #1c1c22; --bg-card-hover: #25252d;
+      --text-primary: #f2f2f5; --text-secondary: #a0a0a5; --text-tertiary: #6e6e76;
+      --accent-primary: #6c5ce7; --accent-glow: rgba(108, 92, 231, 0.4); --accent-secondary: #00cec9;
+      --border-subtle: rgba(255, 255, 255, 0.08); --border-focus: rgba(108, 92, 231, 0.5);
+      --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-full: 9999px;
+      --shadow-deep: 0 10px 40px rgba(0, 0, 0, 0.4);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "Fira Code", Consolas, Monaco, "Andale Mono", monospace;
+      --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --z-header: 100; --z-bottom-bar: 90; --z-modal: 200; --z-toast: 300;
+    }
+    html[data-theme="light"] {
+      --bg-body: #f8f9fa; --bg-surface: #ffffff; --bg-surface-glass: rgba(255, 255, 255, 0.95);
+      --bg-card: #ffffff; --bg-card-hover: #f1f3f5;
+      --text-primary: #1a1a1e; --text-secondary: #5e5e65; --text-tertiary: #868e96;
+      --accent-primary: #5f27cd; --accent-glow: rgba(95, 39, 205, 0.2);
+      --border-subtle: rgba(0, 0, 0, 0.08); --border-focus: rgba(95, 39, 205, 0.4);
+      --shadow-deep: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body { background-color: var(--bg-body); color: var(--text-primary); font-family: var(--font-sans); font-size: 16px; line-height: 1.5; margin: 0; transition: background-color 0.3s, color 0.3s; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    a { text-decoration: none; color: inherit; }
+    button { border: none; background: none; cursor: pointer; font-family: inherit; color: inherit; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+    .flex { display: flex; } .items-center { align-items: center; } .justify-between { justify-content: space-between; } .gap-2 { gap: 8px; } .hidden { display: none !important; }
+
+    #loadingBar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent-primary); width: 0%; transition: width 0.3s ease; z-index: 300; box-shadow: 0 0 10px var(--accent-glow); }
+    
+    /* Header */
+    .app-header { position: sticky; top: 0; z-index: var(--z-header); background: var(--bg-surface-glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle); height: 60px; display: flex; align-items: center; }
+    .brand { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
+    
+    .search-wrapper { position: relative; margin: 0 12px; flex: 1; max-width: 420px; }
+    .search-input { width: 100%; height: 38px; background: var(--bg-body); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 0 16px 0 40px; color: var(--text-primary); font-size: 14px; transition: all 0.2s; }
+    .search-input:focus { outline: none; border-color: var(--accent-primary); background: var(--bg-surface); }
+    /* Force Icon Size */
+    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); width: 18px !important; height: 18px !important; }
+    .search-clear { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--bg-surface); display: none; align-items: center; justify-content: center; color: var(--text-secondary); transition: 0.2s; }
+    .search-clear.visible { display: inline-flex; }
+
+    .header-actions button{ width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-subtle); display: inline-flex; align-items: center; justify-content: center; background: var(--bg-surface); color: var(--text-secondary); transition: 0.2s; }
+    .header-actions button:hover { background: var(--bg-card-hover); color: var(--text-primary); border-color: var(--accent-primary); }
+
+    /* Controls */
+    .control-bar { margin: 20px 0 16px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+    .tab-layers { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 8px; }
+    .tabs { display: flex; gap: 6px; padding-bottom: 4px; overflow-x: auto; scrollbar-width: none; align-items: center; }
+    .tabs.layer { border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; animation: fadeIn 0.3s var(--ease-smooth); }
+    body.tabs-ready .tabs.layer { animation: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { padding: 6px 14px; border-radius: var(--radius-full); font-size: 13px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; transition: all 0.2s; cursor: pointer; }
+    .tab-btn:hover { background: var(--bg-surface); color: var(--text-primary); }
+    .tab-btn.active { background: var(--text-primary); color: var(--bg-body); }
+    html[data-theme="light"] .tab-btn.active { background: var(--text-primary); color: white; }
+    .tab-btn.all { border: 1px dashed var(--border-subtle); font-weight: 700; }
+    .tab-btn.all.active { background: var(--accent-glow); color: var(--accent-primary); border-color: transparent; }
+    .tab-btn.all:hover { border-color: var(--accent-primary); color: var(--text-primary); }
+    
+    .right-controls { display: flex; gap: 10px; align-items: center; }
+    .view-toggle, .filter-wrap, .sort-wrap { background: var(--bg-surface); padding: 3px; border-radius: 10px; border: 1px solid var(--border-subtle); display: flex; align-items: center; }
+    .view-btn, .filter-chip { padding: 6px 10px; border-radius: 8px; color: var(--text-tertiary); transition: 0.2s; display: flex; align-items: center; font-size: 13px; cursor: pointer; }
+    .view-btn.active, .filter-chip.active { background: var(--bg-card-hover); color: var(--text-primary); font-weight: 700; }
+    .filter-chip.active { color: var(--accent-primary); background: var(--accent-glow); }
+    .sort-select { height: 30px; border: none; background: transparent; color: var(--text-secondary); font-weight: 800; font-size: 12px; padding: 0 10px; appearance: none; outline: none; cursor: pointer; }
+
+    /* Cards */
+    .notice-section { display: grid; gap: 10px; margin-bottom: 24px; }
+    .notice-card { background: linear-gradient(90deg, var(--bg-surface), transparent); border-left: 3px solid var(--accent-primary); padding: 12px 16px; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--border-subtle); border-left-width: 3px; cursor: pointer; transition: transform 0.2s; }
+    .notice-card:hover { transform: translateX(4px); }
+    .notice-badge { background: var(--accent-primary); color: white; font-size: 11px; padding: 2px 6px; border-radius: 4px; margin-right: 10px; }
+
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 60px; }
+    @media (max-width: 520px) { .content-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+    .card { background: var(--bg-card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-subtle); position: relative; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); border-color: var(--border-focus); }
+    .card-thumb { width: 100%; aspect-ratio: 1/1; object-fit: cover; background: var(--bg-surface); opacity: 0; transition: opacity 0.4s ease; }
+    .card-thumb.loaded { opacity: 1; }
+    .card-thumb.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 11px; color: var(--text-tertiary); background: repeating-linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.06) 10px, transparent 10px, transparent 20px); opacity: 1; }
+    .thumb-tag { font-size: 10px; font-weight: 800; color: var(--accent-primary); background: var(--accent-glow); padding: 2px 8px; border-radius: 999px; }
+    .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+    @media (max-width: 520px) { .card-body { padding: 12px; } }
+    .card-title { font-size: 16px; font-weight: 650; margin-bottom: auto; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+    .card-meta-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+    .label-stack { display: inline-flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .label-chip { font-weight: 800; font-size: 11px; padding: 2px 10px; border-radius: 999px; background: var(--accent-glow); color: var(--accent-primary); letter-spacing: -0.1px; }
+    .label-chip.sub { background: transparent; border: 1px dashed var(--border-subtle); color: var(--text-secondary); font-weight: 700; }
+    .label-sep { color: var(--text-tertiary); font-weight: 700; }
+    .card-footer { margin-top: 12px; display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); border-top: 1px solid var(--border-subtle); padding-top: 10px; }
+    .highlight-tag { color: var(--accent-secondary); font-weight: 700; }
+    .new-badge { position: absolute; top: 10px; left: 10px; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 900; color: #fff; background: var(--accent-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 2; }
+    .read-badge { position: absolute; top: 10px; right: 10px; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 900; color: var(--accent-primary); background: rgba(108, 92, 231, 0.15); border: 1px solid rgba(108, 92, 231, 0.25); backdrop-filter: blur(10px); z-index: 2; }
+
+    .content-list { display: flex; flex-direction: column; gap: 12px; }
+    .content-list .card { flex-direction: row; height: 100px; align-items: center; }
+    .content-list .card-thumb { width: 100px; height: 100%; border-right: 1px solid var(--border-subtle); }
+    .content-list .card-body { padding: 0 20px; flex-direction: row; align-items: center; width: 100%; gap: 16px; }
+    .content-list .card-title { margin: 0; flex: 1; }
+    .content-list .card.no-thumb { height: auto; padding: 12px 16px; border-left: 3px solid var(--accent-primary); background: linear-gradient(90deg, var(--bg-surface), var(--bg-card)); }
+    .content-list .card.no-thumb .card-thumb { display: none; }
+    .content-list .card.no-thumb .card-body { padding: 0; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .content-list .card.no-thumb .card-title { font-size: 15px; }
+    .content-list { gap: 0; border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; background: var(--bg-card); }
+    .content-list .list-row { display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); cursor: pointer; }
+    .content-list .list-row:last-child { border-bottom: none; }
+    .content-list .list-left { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; }
+    .content-list .list-label { font-size: 11px; font-weight: 800; color: var(--accent-primary); background: var(--accent-glow); padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+    .content-list .list-title { font-size: 15px; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .content-list .list-right { display: flex; gap: 14px; font-size: 12px; color: var(--text-tertiary); white-space: nowrap; }
+    .content-list .list-author { color: var(--text-secondary); font-weight: 700; }
+    .content-list .list-date { color: var(--text-tertiary); }
+    .content-list .list-read { font-size: 10px; padding: 2px 6px; border-radius: 6px; background: rgba(108, 92, 231, 0.15); color: var(--accent-primary); border: 1px solid rgba(108, 92, 231, 0.25); }
+    .content-list .list-comments { font-size: 11px; font-weight: 800; color: var(--text-secondary); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 999px; padding: 2px 8px; }
+    .content-list .list-row:hover { background: var(--bg-card-hover); }
+    @media (max-width: 768px) { .content-list .list-row { flex-direction: column; align-items: flex-start; gap: 8px; } .content-list .list-right { width: 100%; justify-content: space-between; } }
+    @media (max-width: 768px) { .content-list .card { height: auto; flex-wrap: wrap; padding: 12px; } .content-list .card-thumb { display: none; } .content-list .card-body { padding: 0; flex-direction: column; align-items: flex-start; gap: 8px; } }
+
+    /* Single Post View */
+    .post-view { margin: 0 auto 80px; max-width: 900px; animation: fadeIn 0.4s var(--ease-smooth); }
+    .post-nav { margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .post-card { background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-deep); overflow: hidden; }
+    .post-header { padding: 40px 40px 24px; background: linear-gradient(to bottom, var(--bg-surface), var(--bg-card)); border-bottom: 1px solid var(--border-subtle); }
+    .post-meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .post-meta-top { display: flex; gap: 10px; font-size: 13px; color: var(--text-tertiary); align-items: center; flex-wrap: wrap; }
+    .post-meta-label { color: var(--accent-primary); font-weight: 800; padding: 2px 10px; border-radius: 999px; background: var(--accent-glow); }
+    .post-meta-date { color: var(--text-secondary); font-weight: 700; }
+    .post-meta-date-line { margin-top: 6px; font-size: 13px; color: var(--text-tertiary); }
+    .post-meta-bottom { margin-top: 10px; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--text-secondary); }
+    .post-meta-author { font-weight: 700; }
+    .post-title { font-size: 32px; font-weight: 800; color: var(--text-primary); line-height: 1.3; margin: 0; letter-spacing: -0.5px; }
+    
+    .post-content { padding: 40px; font-size: 17px; line-height: 1.8; color: var(--text-primary); min-height: 300px; }
+    .post-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 24px 0; display: block; cursor: zoom-in; opacity: 0; transition: opacity 0.4s; }
+    .post-content img.loaded { opacity: 1; }
+    .post-content iframe { width: 100%; max-width: 100%; aspect-ratio: 16/9; border-radius: 8px; margin: 24px 0; display: block; border: none; }
+    .post-content p { margin-bottom: 24px; }
+    .post-content h2, .post-content h3 { margin: 40px 0 16px; font-weight: 700; color: var(--text-primary); scroll-margin-top: 140px;}
+    .post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; overflow-x: auto; border: 1px solid var(--border-subtle); margin: 24px 0; font-family: var(--font-mono); font-size: 14px; line-height: 1.5; position: relative; }
+    .post-content code { background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 6px; font-size: 0.92em; }
+    .post-content blockquote { border-left: 4px solid var(--accent-primary); margin: 20px 0; padding-left: 20px; color: var(--text-secondary); font-style: italic; background: rgba(108, 92, 231, 0.05); padding: 16px 16px 16px 20px; border-radius: 0 8px 8px 0; }
+    .post-content a[target="_blank"]::after { content: " ↗"; font-size: 0.8em; opacity: 0.7; }
+    .code-copy { position: absolute; top: 10px; right: 10px; padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 4px; font-size: 11px; color: #ccc; cursor: pointer; border: none;}
+    .code-copy:hover { background: rgba(255,255,255,0.2); }
+    .post-content table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+    .post-content th, .post-content td { border: 1px solid var(--border-subtle); padding: 8px 10px; text-align: left; vertical-align: top; }
+    .post-content th { background: var(--bg-surface); font-weight: 700; }
+    .post-content tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+    .post-content .md-task { display: inline-flex; align-items: center; gap: 6px; }
+    .post-content .md-task input { width: 16px; height: 16px; }
+
+    @media (max-width: 768px) { .post-header, .post-content { padding: 24px; } .post-title { font-size: 24px; } .post-meta-row { flex-direction: column; align-items: flex-start; gap: 10px; } .post-actions { width: 100%; justify-content: flex-end; } .post-meta-bottom { width: 100%; } }
+    
+    .post-actions { display: flex; gap: 10px; }
+    .action-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: 0.2s; background: var(--bg-surface); cursor: pointer; }
+    .action-btn svg { width: 20px !important; height: 20px !important; }
+    .action-btn:hover { background: var(--bg-card-hover); color: var(--text-primary); border-color: var(--accent-primary); }
+    .back-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-surface); border-radius: 99px; font-weight: 800; font-size: 14px; color: var(--text-secondary); border: 1px solid var(--border-subtle); transition: all 0.2s; cursor: pointer;}
+    .back-btn svg { width: 16px !important; height: 16px !important; }
+    .back-btn:hover { background: var(--bg-card-hover); color: var(--text-primary); border-color: var(--text-tertiary); }
+
+    /* TOC */
+    .toc { margin-top: 18px; background: rgba(0,0,0,0.03); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 14px; }
+    .toc-title { font-weight: 900; font-size: 14px; margin-bottom: 10px; }
+    .toc-list { display: grid; gap: 6px; }
+    .toc-item { display: block; padding: 6px 10px; border-radius: 8px; font-size: 13px; color: var(--text-secondary); transition: 0.2s; }
+    .toc-item:hover, .toc-item.active { background: var(--bg-card-hover); color: var(--accent-primary); font-weight: 700; }
+
+    /* Comments */
+    .section-title { font-size: 18px; font-weight: 700; margin: 40px 0 20px; border-bottom: 2px solid var(--border-subtle); padding-bottom: 10px; display: inline-block; color: var(--text-primary); }
+    .comments-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .comment-count { font-size: 12px; color: var(--text-tertiary); margin-left: 6px; font-weight: 700; }
+    .comment-refresh { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-secondary); font-size: 12px; font-weight: 700; cursor: pointer; }
+    .comment-refresh:hover { background: var(--bg-card-hover); color: var(--text-primary); border-color: var(--accent-primary); }
+    .comment-item { padding: 20px 0; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 16px; animation: fadeIn 0.4s ease; }
+    .comment-item.reply { margin-left: calc(28px * var(--reply-depth, 1)); border-left: 2px solid var(--border-subtle); padding-left: 16px; background: rgba(0,0,0,0.02); border-bottom: none; border-top: 1px solid var(--border-subtle); }
+    .comment-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: var(--bg-surface); flex-shrink: 0; border: 1px solid var(--border-subtle); }
+    .comment-avatar-empty { display: inline-flex; align-items: center; justify-content: center; color: var(--text-primary); font-weight: 700; font-size: 12px; background: var(--avatar-bg, var(--bg-surface)); text-transform: uppercase; }
+    .comment-content { flex: 1; }
+    .comment-meta { display: flex; gap: 8px; margin-bottom: 6px; align-items: center; }
+    .comment-author { font-weight: 700; font-size: 14px; color: var(--text-primary); }
+    .comment-date { font-size: 12px; color: var(--text-tertiary); }
+    .comment-body { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+    .comment-actions { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .reply-btn { font-size: 12px; color: var(--accent-primary); font-weight: 600; cursor: pointer; padding: 4px 8px; background: var(--accent-glow); border-radius: 4px; display: inline-block; margin-top: 8px;}
+    .reply-btn:hover { background: var(--accent-primary); color: white; }
+    .comment-action-btn { font-size: 12px; color: var(--text-secondary); font-weight: 700; padding: 4px 8px; background: var(--bg-surface); border-radius: 6px; border: 1px solid var(--border-subtle); }
+    .comment-action-btn:hover { border-color: var(--accent-primary); color: var(--text-primary); }
+    .comment-note { font-size: 12px; color: var(--text-tertiary); }
+
+    .comment-form-wrapper { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 24px; margin: 20px 0 24px; display: flex; gap: 16px; transition: 0.3s; }
+    .comment-form-trigger { width: 100%; text-align: center; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--bg-surface); padding: 12px 16px; cursor: pointer; display: block; font-size: 14px; font-weight: 700; color: var(--text-secondary); }
+    .comment-form-trigger:hover { border-color: var(--accent-primary); transform: translateY(-2px); }
+    .comment-trigger-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-surface); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); }
+    .comment-input-area { flex: 1; min-width: 0; }
+    .comment-form-title { font-size: 13px; font-weight: 700; color: var(--text-tertiary); margin-bottom: 8px; }
+    .comment-form-meta { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+    .comment-form-reset { padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-surface); font-size: 11px; font-weight: 700; color: var(--text-secondary); }
+    .comment-form-reset:hover { border-color: var(--accent-primary); color: var(--text-primary); }
+    .comment-form-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 12px; color: var(--text-secondary); }
+    .comment-form-link:hover { color: var(--text-primary); }
+    .comment-trigger-input { flex: 1; background: var(--bg-surface); border: none; border-radius: 12px; padding: 12px 16px; font-size: 14px; color: var(--text-tertiary); pointer-events: none; }
+    .comment-iframe-wrap { margin-top: 10px; border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; background: var(--bg-body); width: 100%; }
+    .comment-iframe { width: 100%; height: 360px; border: 0; display: block; background: transparent; }
+    .comment-form-fallback { padding: 16px; text-align: center; font-size: 13px; color: var(--text-tertiary); }
+
+    /* Related */
+    .related-wrap { padding: 0 40px 40px; position: relative; }
+    @media (max-width: 768px) { .related-wrap { padding: 0 24px 24px; } }
+    .related-title { font-size: 16px; font-weight: 900; margin-bottom: 14px; }
+    .related-grid { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    .related-grid::-webkit-scrollbar { height: 6px; }
+    .related-grid::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.3); border-radius: 10px; visibility: hidden; }
+    .related-grid:hover::-webkit-scrollbar-thumb { visibility: visible; }
+    .related-card { min-width: 220px; max-width: 220px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.2s; scroll-snap-align: start; flex-shrink: 0; user-select: none; }
+    .related-card:hover { transform: translateY(-3px); border-color: var(--accent-primary); }
+    .related-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; pointer-events: none; background: #222; }
+    .related-thumb-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 11px; color: var(--text-tertiary); background: repeating-linear-gradient(135deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 10px, transparent 10px, transparent 20px); }
+    .related-thumb-tag { font-size: 10px; font-weight: 800; color: var(--accent-primary); background: var(--accent-glow); padding: 2px 8px; border-radius: 999px; }
+    .related-body { padding: 10px; pointer-events: none; }
+    .related-name { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .related-scroll-btn { position: absolute; top: 50%; transform: translateY(-30%); width: 36px; height: 36px; border-radius: 50%; background: var(--bg-surface); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-deep); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; opacity: 0; transition: 0.2s; pointer-events: none; }
+    .related-wrap:hover .related-scroll-btn { opacity: 1; pointer-events: auto; }
+    .related-scroll-btn.prev { left: 10px; }
+    .related-scroll-btn.next { right: 10px; }
+    .related-scroll-btn:hover { background: var(--bg-card-hover); color: var(--accent-primary); }
+
+    .scroll-top { position: fixed; right: 24px; bottom: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(10px); pointer-events: none; transition: 0.2s; z-index: var(--z-bottom-bar); }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover { background: var(--bg-card-hover); color: var(--accent-primary); border-color: var(--accent-primary); }
+
+    /* Mobile Bottom Action Bar */
+    .mobile-bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-surface-glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border-subtle); padding: 12px 24px; display: none; justify-content: space-around; align-items: center; z-index: var(--z-bottom-bar); }
+    @media (max-width: 768px) { body.is-reading .mobile-bottom-bar { display: flex; animation: slideUp 0.3s ease; } .scroll-top { bottom: 80px; } }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .mobile-action-icon { width: 24px !important; height: 24px !important; color: var(--text-secondary); cursor: pointer; }
+    .mobile-action-icon:hover { color: var(--accent-primary); }
+
+    .app-footer { text-align: center; padding: 60px 0 100px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border-subtle); margin-top: 60px; }
+    
+    .toast-container { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: var(--z-toast); pointer-events: none; }
+    .toast { background: rgba(20, 20, 24, 0.95); color: #fff; padding: 12px 16px; border-radius: 99px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; transform: translateY(20px); transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255,255,255,0.1); white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; pointer-events: auto; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast button { display: none; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .toast button.visible { display: inline-flex; }
+    .toast button:hover { background: rgba(255,255,255,0.1); }
+
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: var(--z-modal); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; }
+    .lightbox.active { opacity: 1; pointer-events: auto; }
+    .lightbox img { max-width: 90%; max-height: 90%; border-radius: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    .lightbox-close { position: absolute; top: 20px; right: 20px; color: white; width: 40px; height: 40px; cursor: pointer; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: var(--z-modal); display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+    .modal-card { background: var(--bg-card); padding: 32px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-deep); }
+    .modal-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: var(--text-primary); }
+    .modal-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+    .modal-close { padding: 10px 24px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 99px; cursor: pointer; font-weight: 600; color: var(--text-primary); }
+    .modal-close:hover { background: var(--bg-card-hover); }
+    .modal-close-text { border:none; background:none; color: var(--text-tertiary); font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 16px; }
+    .modal-close-text:hover { color: var(--text-primary); }
+
+    .share-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .share-item { display: flex; flex-direction: column; align-items: center; gap: 8px; background: none; border: none; cursor: pointer; }
+    .share-icon-box { width: 56px; height: 56px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: 0.2s; }
+    .share-item:hover .share-icon-box { background: var(--bg-card-hover); border-color: var(--accent-primary); transform: translateY(-3px); }
+    .share-item span { font-size: 12px; font-weight: 700; color: var(--text-secondary); }
+
+    .loading-spinner { border: 4px solid var(--border-subtle); border-top: 4px solid var(--accent-primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 40px auto; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    .empty-state { text-align: center; padding: 80px 0; color: var(--text-tertiary); grid-column: 1 / -1; }
+    .error-msg { color: #ff6b6b; padding: 20px; text-align: center; background: rgba(255,0,0,0.1); border-radius: 8px; }
+    .load-more-btn { display: block; width: 100%; max-width: 300px; margin: 0 auto 60px; padding: 14px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 99px; font-weight: 700; color: var(--text-secondary); cursor: pointer; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.4s var(--ease-smooth) forwards; }
+    .icon { width: 20px !important; height: 20px !important; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  ]]></b:skin>
+</head>
+
+<body expr:data-page='data:blog.pageType'>
+
+  <b:section class='hidden-blogger-section' id='hiddenBloggerSection' showaddelement='no'>
+    <b:widget id='Blog1' locked='true' title='블로그 게시물' type='Blog' version='2' visible='true'>
+      <b:widget-settings>
+        <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+        <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+        <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+        <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showAuthor'>true</b:widget-setting>
+        <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+        <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='timestampLabel'/>
+        <b:widget-setting name='reactionsLabel'/>
+        <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+        <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+        <b:widget-setting name='showLabels'>true</b:widget-setting>
+        <b:widget-setting name='showLocation'>true</b:widget-setting>
+        <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+        <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+        <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+        <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+        <b:widget-setting name='showReactions'>false</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+         <b:if cond='data:view.isPost'>
+           <b:loop values='data:posts' var='post'>
+             <div class='comment-form-src' expr:data-comment-src='data:post.commentFormIframeSrc' expr:data-post-id='data:post.id' expr:data-post-url='data:post.url' style='display:none'/>
+           </b:loop>
+         </b:if>
+      </b:includable>
+      <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+      <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+      <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+      <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+      <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+      <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+      <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+      <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+      <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+      <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+      <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+      <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' rel='noopener' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+      <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+      <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+      <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+      <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+      <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+      <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+      <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+      <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+      <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+      <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+      <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+      <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+      <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+      <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+      <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+      <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+      <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+      <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+    </b:widget>
+  </b:section>
+
+  <div id='loadingBar'/>
+
+  <header class='app-header'>
+    <div class='container flex justify-between items-center'>
+      <a class='brand' expr:href='data:blog.homepageUrl' id='homeLink'>PAsh<span style='color:var(--accent-primary)'>Kite</span></a>
+
+      <div class='search-wrapper'>
+        <svg class='search-icon icon' height='24' viewBox='0 0 24 24' width='24'><circle cx='11' cy='11' r='8'/><line x1='21' x2='16.65' y1='21' y2='16.65'/></svg>
+        <input autocomplete='off' class='search-input' id='searchInput' placeholder='Search... ( / )' type='text'/>
+        <button aria-label='Clear search' class='search-clear' id='searchClear' title='Clear'>
+          <svg class='icon' style='width:16px;height:16px;' viewBox='0 0 24 24'><line x1='18' x2='6' y1='6' y2='18'/><line x1='6' x2='18' y1='6' y2='18'/></svg>
+        </button>
+      </div>
+
+      <div class='header-actions flex gap-2'>
+        <button aria-label='Toggle theme' id='themeToggle' title='Theme'>
+          <svg class='icon' height='24' viewBox='0 0 24 24' width='24'><path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>
+        </button>
+        <button aria-label='Info' id='infoBtn' title='Info'>
+          <svg class='icon' height='24' viewBox='0 0 24 24' width='24'><circle cx='12' cy='12' r='10'/><line x1='12' x2='12' y1='16' y2='12'/><line x1='12' x2='12.01' y1='8' y2='8'/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class='container'>
+
+    <div id='listViewArea'>
+      <div class='control-bar' id='stickyControls'>
+        <div class='tab-layers'>
+          <div aria-label='Categories' id='tabLayers'/>
+        </div>
+
+        <div class='right-controls' id='rightControls'>
+          <div class='sort-wrap' title='Sort'>
+            <svg class='sort-caret icon' height='16' viewBox='0 0 24 24' width='16'><polyline points='6 9 12 15 18 9'/></svg>
+            <select aria-label='Sort' class='sort-select' id='sortSelect'>
+              <option value='new'>최신순</option>
+              <option value='old'>오래된순</option>
+              <option value='title'>제목순</option>
+              <option value='notice'>공지우선</option>
+            </select>
+          </div>
+
+          <div class='filter-wrap' id='filterContainer'>
+            <button class='filter-chip active' data-filter='all'>전체</button>
+            <button class='filter-chip' data-filter='notice'>공지</button>
+          </div>
+
+          <div class='view-toggle' id='viewToggle'>
+            <button aria-label='Grid view' class='view-btn active' data-view='grid'>
+              <svg class='icon' style='width:16px;' viewBox='0 0 24 24'><rect height='7' width='7' x='3' y='3'/><rect height='7' width='7' x='14' y='3'/><rect height='7' width='7' x='14' y='14'/><rect height='7' width='7' x='3' y='14'/></svg>
+            </button>
+            <button aria-label='List view' class='view-btn' data-view='list'>
+              <svg class='icon' fill='none' height='16' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' width='16'>
+                <circle cx='4' cy='6' fill='currentColor' r='1'/>
+                <circle cx='4' cy='12' fill='currentColor' r='1'/>
+                <circle cx='4' cy='18' fill='currentColor' r='1'/>
+                <line x1='8' x2='21' y1='6' y2='6'/>
+                <line x1='8' x2='21' y1='12' y2='12'/>
+                <line x1='8' x2='21' y1='18' y2='18'/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class='notice-section' id='noticeArea'/>
+      <section class='content-grid' id='contentArea'>
+            <div class='loading-spinner'/>
+      </section>
+
+      <button class='load-more-btn' id='loadMoreBtn' style='display:none'>More Posts</button>
+      <div id='infiniteSentinel'/>
+    </div>
+
+    <section class='post-view hidden' id='singlePostView' style='display:none;'>
+      <div class='post-nav'>
+        <button class='back-btn' id='backToListBtn'>
+          <svg class='icon' height='24' viewBox='0 0 24 24' width='24'><line x1='19' x2='5' y1='12' y2='12'/><polyline points='12 19 5 12 12 5'/></svg>
+          Back to List
+        </button>
+      </div>
+
+      <div id='postContentContainer'><div class='loading-spinner'/></div>
+
+      <div id='commentsContainer'>
+        <div class='comments-head'>
+          <div class='section-title'>Comments <span class='comment-count' id='commentCount'/></div>
+          <button class='comment-refresh' id='commentRefreshBtn' type='button'>새로고침</button>
+        </div>
+        <div class='comment-form-wrapper'>
+          <div aria-hidden='true' class='comment-trigger-avatar'/>
+          <div class='comment-input-area'>
+            <div class='comment-form-title'>댓글 작성</div>
+            <div class='comment-form-meta'>
+              <span id='commentFormModeText'>일반 댓글</span>
+              <button class='comment-form-reset hidden' id='commentFormReset' type='button'>일반 댓글로</button>
+            </div>
+            <div class='comment-iframe-wrap' id='commentIframeWrap'>
+              <iframe allowtransparency='allowtransparency' class='comment-iframe' id='commentInlineFrame' sandbox='allow-scripts allow-same-origin allow-forms allow-popups' scrolling='no' title='댓글 작성'/>
+              <div class='comment-form-fallback hidden' id='commentFormFallback'>
+                댓글 입력 폼을 불러오는 중 문제가 발생했습니다. 새로고침 후 다시 시도해주세요.
+                <a class='comment-form-link' id='commentFormFallbackLink' rel='noopener' target='_blank'>댓글 페이지 열기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div aria-busy='false' aria-live='polite' id='commentsList'/>
+      </div>
+      
+      <div class='hidden' id='relatedPostsContainer'>
+         <div class='section-title'>Related Posts</div>
+         <div class='related-wrap' id='relatedWrap'>
+           <button class='related-scroll-btn prev'><svg class='icon' height='24' viewBox='0 0 24 24' width='24'><polyline points='15 18 9 12 15 6'/></svg></button>
+           <div class='related-grid' id='relatedGrid'/>
+           <button class='related-scroll-btn next'><svg class='icon' height='24' viewBox='0 0 24 24' width='24'><polyline points='9 18 15 12 9 6'/></svg></button>
+         </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class='mobile-bottom-bar' id='mobileBottomBar'>
+      <svg aria-label='뒤로가기' class='icon mobile-action-icon' data-key-action='1' height='24' id='mobileBackBtn' role='button' tabindex='0' viewBox='0 0 24 24' width='24'><line x1='19' x2='5' y1='12' y2='12'/><polyline points='12 19 5 12 12 5'/></svg>
+      <svg aria-label='공유하기' class='icon mobile-action-icon' data-key-action='1' height='24' id='mobileShareBtn' role='button' tabindex='0' viewBox='0 0 24 24' width='24'><path d='M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7'/><polyline points='16 6 12 2 8 6'/><line x1='12' x2='12' y1='2' y2='15'/></svg>
+      <svg aria-label='댓글로 이동' class='icon mobile-action-icon' data-key-action='1' height='24' id='mobileCommentBtn' role='button' tabindex='0' viewBox='0 0 24 24' width='24'><path d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/></svg>
+      <svg aria-label='맨 위로' class='icon mobile-action-icon' data-key-action='1' height='24' id='mobileTopBtn' role='button' tabindex='0' viewBox='0 0 24 24' width='24'><line x1='12' x2='12' y1='19' y2='5'/><polyline points='5 12 12 5 19 12'/></svg>
+  </div>
+
+  <footer class='app-footer'>
+    <div class='container'>&#169; <span id='year'/> PAshKite. All rights reserved. <b:section id='footer_widget' showaddelement='yes'/></div>
+  </footer>
+
+  <button aria-label='Scroll to top' class='scroll-top' id='scrollTop'>
+    <svg class='icon' height='24' viewBox='0 0 24 24' width='24'><line x1='12' x2='12' y1='19' y2='5'/><polyline points='5 12 12 5 19 12'/></svg>
+  </button>
+
+  <div aria-hidden='true' class='lightbox' id='lightbox'>
+    <div aria-label='Close image' class='lightbox-close' title='Close'>
+      <svg class='icon' height='32' style='width:32px;height:32px;' viewBox='0 0 24 24' width='32'><line x1='18' x2='6' y1='6' y2='18'/><line x1='6' x2='18' y1='6' y2='18'/></svg>
+    </div>
+    <img alt='Zoom' id='lightboxImg' src=''/>
+  </div>
+
+  <div aria-hidden='true' class='modal-overlay' id='infoModal'>
+    <div aria-labelledby='infoTitle' aria-modal='true' class='modal-card' role='dialog'>
+      <h2 class='modal-title' id='infoTitle'>PAshKite&#39;s Blog</h2>
+      <p class='modal-desc'>Ashkite의 잡다한 메모장 같은 역할을 하는 블로그 입니다.</p>
+      <button class='modal-close' id='infoCloseBtn'>Close</button>
+    </div>
+  </div>
+
+  <!-- Share Options Modal -->
+  <div aria-hidden='true' class='modal-overlay' id='shareOptionsModal'>
+      <div aria-labelledby='shareTitle' aria-modal='true' class='modal-card' role='dialog'>
+          <h3 class='modal-title' id='shareTitle'>공유하기</h3>
+          <div class='share-grid'>
+              <button class='share-item' id='shareCopyBtn'>
+                  <div class='share-icon-box'>🔗</div>
+                  <span>링크 복사</span>
+              </button>
+              <button class='share-item' id='shareTwitterBtn'>
+                  <div class='share-icon-box'>&#10006;&#65039;</div>
+                  <span>X (Twitter)</span>
+              </button>
+              <button class='share-item' id='shareNativeBtn'>
+                  <div class='share-icon-box'>📱</div>
+                  <span>더보기</span>
+              </button>
+          </div>
+          <button class='modal-close-text' id='shareCloseBtn'>닫기</button>
+      </div>
+  </div>
+
+  <div class='toast-container'>
+    <div aria-atomic='true' aria-live='polite' class='toast' id='toast' role='status'>
+      <span id='toastText'/>
+      <button id='toastAction' type='button'/>
+      <button id='toastClose' type='button'>취소</button>
+    </div>
+  </div>
+
+  <script>
+    //<![CDATA[
+    (function () {
+      const CONFIG = {
+        pageSize: 12,
+        theme: 'light',
+        feedBase: '/feeds/posts/summary', // Single Fetch source
+        allowMockFallback: false, 
+        maxPrefetchConcurrency: 2,
+        markdownMode: 'label', // 'off' | 'label' | 'all'
+        markdownLabels: ['markdown', 'md'],
+        hiddenTabLabels: ['markdown', 'md']
+      };
+      const TAB_ALL_SUFFIX = '__all';
+      const CAN_HOVER = (window.matchMedia && window.matchMedia('(hover: hover)').matches);
+      const BLOG_ID = '<data:blog.blogId/>';
+
+      const STORAGE_THEME = 'ashkite_theme_v2';
+      const STORAGE_STATE = 'ashkite_state_v2';
+      const STORAGE_READ = 'ashkite_read_v2';
+      const STORAGE_PROGRESS = 'ashkite_progress_v2';
+      const STORAGE_READER = 'ashkite_reader_v2';
+
+      const CACHE_PREFIX = 'ashkite_feed_cache_v2:';
+      const CACHE_TTL_MS = 1000 * 60 * 10; 
+      const POST_CACHE_PREFIX = 'ashkite_post_cache_v2:';
+      const COMMENT_CACHE_PREFIX = 'ashkite_comment_cache_v2:';
+      const COMMENT_CACHE_TTL_MS = 1000 * 30;
+
+      const STATE = {
+        tabs: [{ id: 'all', label: '전체', subTabs: [] }],
+        selectedPath: ['all'],
+        listPath: ['all'],
+        viewMode: 'grid',
+        filterMode: 'all',
+        sortMode: 'new',
+        searchQuery: '',
+        page: 1,
+        posts: [],
+        hasMore: true,
+        isReading: false,
+        currentPost: null,
+        listScrollY: 0,
+        listUrl: null,
+        loading: false,
+        toastTimer: null,
+        searchTimer: null,
+        tocObserver: null,
+        tocItems: [],
+        prefetchQueue: [],
+        prefetchActive: 0,
+        readMap: {},
+        progressMap: {},
+        readerPrefs: { fontSize: 17, width: 900 },
+        lastFocusEl: null,
+        modalStack: [],
+        currentPostIdForComments: "",
+        commentFormMode: "new",
+        commentFormTarget: "",
+        hoverPath: [],
+        hoverTimer: null,
+        hoverClearTimer: null,
+        hoverTargetId: "",
+        hoverTargetLevel: 0,
+        tabsReady: false,
+        lastTabRenderAt: 0,
+        lastTabRenderKey: ""
+      };
+
+      // ---------- Utils ----------
+      function escapeHtml(s) {
+        return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m]);
+      }
+      function isSafeUrl(url) {
+        const u = String(url || '').trim().toLowerCase();
+        if (!u) return false;
+        if (u.indexOf('javascript:') === 0) return false;
+        return /^(https?:|mailto:|\/|#|\?|\.\.\/|\.\/)/.test(u);
+      }
+      function formatInline(text) {
+        let s = escapeHtml(text);
+        const codeTokens = [];
+        s = s.replace(/`([^`]+)`/g, function (_, code) {
+          const token = '__CODE_TOKEN_' + codeTokens.length + '__';
+          codeTokens.push('<code>' + code + '</code>');
+          return token;
+        });
+        s = s.replace(/&lt;(https?:\/\/[^&]+)&gt;/g, function (_, url) {
+          if (!isSafeUrl(url)) return '&lt;' + url + '&gt;';
+          return '<a href="' + url + '">' + url + '</a>';
+        });
+        s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (_, alt, url) {
+          if (!isSafeUrl(url)) return '![' + alt + '](' + url + ')';
+          return '<img src="' + url + '" alt="' + alt + '"/>';
+        });
+        s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_, label, url) {
+          if (!isSafeUrl(url)) return '[' + label + '](' + url + ')';
+          return '<a href="' + url + '">' + label + '</a>';
+        });
+        s = s.replace(/~~([^~]+)~~/g, '<del>$1</del>');
+        s = s.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+        s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/_([^_]+)_/g, '<em>$1</em>');
+        s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+        s = s.split(/(<[^>]+>)/g).map(function (part) {
+          if (part.indexOf('<') === 0) return part;
+          return part.replace(/\bhttps?:\/\/[^\s<]+/g, function (url) {
+            let clean = url;
+            let trail = '';
+            while (/[),.!?]$/.test(clean)) {
+              trail = clean.slice(-1) + trail;
+              clean = clean.slice(0, -1);
+            }
+            if (!isSafeUrl(clean)) return url;
+            return '<a href="' + clean + '">' + clean + '</a>' + trail;
+          });
+        }).join('');
+        codeTokens.forEach(function (html, idx) {
+          s = s.replace('__CODE_TOKEN_' + idx + '__', html);
+        });
+        return s;
+      }
+      function markdownToHtml(md) {
+        const lines = String(md || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+        const out = [];
+        let inCode = false;
+        let codeLines = [];
+        let codeFence = '';
+        let codeLang = '';
+        let listType = '';
+        let listItems = [];
+        let blockquoteLines = [];
+        let paraLines = [];
+
+        function flushParagraph() {
+          if (!paraLines.length) return;
+          out.push('<p>' + paraLines.map(formatInline).join('<br>') + '</p>');
+          paraLines = [];
+        }
+        function formatListItem(text) {
+          const m = String(text || '').match(/^\[( |x|X)\]\s+(.*)$/);
+          if (!m) return formatInline(text);
+          const checked = m[1].toLowerCase() === 'x';
+          const label = m[2] || '';
+          return '<label class="md-task"><input type="checkbox" disabled' + (checked ? ' checked' : '') + '/><span>' +
+            formatInline(label) + '</span></label>';
+        }
+        function flushList() {
+          if (!listItems.length) return;
+          const items = listItems.map(i => '<li>' + formatListItem(i) + '</li>').join('');
+          out.push('<' + listType + '>' + items + '</' + listType + '>');
+          listItems = [];
+          listType = '';
+        }
+        function flushBlockquote() {
+          if (!blockquoteLines.length) return;
+          out.push('<blockquote>' + blockquoteLines.map(formatInline).join('<br>') + '</blockquote>');
+          blockquoteLines = [];
+        }
+        function flushCode() {
+          const cls = codeLang ? ' class="language-' + escapeHtml(codeLang) + '"' : '';
+          out.push('<pre><code' + cls + '>' + escapeHtml(codeLines.join('\n')) + '</code></pre>');
+          codeLines = [];
+          inCode = false;
+          codeFence = '';
+          codeLang = '';
+        }
+        function parseTableRow(line) {
+          if (line.indexOf('|') < 0) return null;
+          const cells = line.split('|');
+          if (cells.length < 2) return null;
+          if (cells[0].trim() === '') cells.shift();
+          if (cells[cells.length - 1].trim() === '') cells.pop();
+          return cells.map(c => c.trim());
+        }
+        function isTableSeparator(line) {
+          return /^\s*\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?\s*$/.test(line);
+        }
+        function parseTableAlign(line) {
+          const cells = parseTableRow(line);
+          if (!cells || !cells.length) return [];
+          return cells.map(function (c) {
+            const t = c.trim();
+            const left = t.indexOf(':') === 0;
+            const right = t.lastIndexOf(':') === t.length - 1;
+            if (left && right) return 'center';
+            if (right) return 'right';
+            return 'left';
+          });
+        }
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          const trimmed = line.trim();
+
+          if (inCode) {
+            if (codeFence && trimmed.indexOf(codeFence) === 0) {
+              flushCode();
+            } else {
+              codeLines.push(line);
+            }
+            continue;
+          }
+
+          const fenceMatch = trimmed.match(/^(```|~~~)\s*([A-Za-z0-9_-]+)?/);
+          if (fenceMatch) {
+            flushParagraph();
+            flushList();
+            flushBlockquote();
+            inCode = true;
+            codeLines = [];
+            codeFence = fenceMatch[1];
+            codeLang = fenceMatch[2] || '';
+            continue;
+          }
+
+          if (!trimmed) {
+            flushParagraph();
+            flushList();
+            flushBlockquote();
+            continue;
+          }
+
+          const next = (i + 1 < lines.length) ? lines[i + 1].trim() : '';
+          if (next && (/^=+$/.test(next) || /^-+$/.test(next))) {
+            flushParagraph();
+            flushList();
+            flushBlockquote();
+            const level = /^=+$/.test(next) ? 1 : 2;
+            out.push('<h' + level + '>' + formatInline(trimmed) + '</h' + level + '>');
+            i += 1;
+            continue;
+          }
+
+          const headerCells = parseTableRow(line);
+          if (headerCells && next && isTableSeparator(next)) {
+            flushParagraph();
+            flushList();
+            flushBlockquote();
+            const aligns = parseTableAlign(next);
+            const colCount = headerCells.length;
+            const rows = [];
+            let j = i + 2;
+            for (; j < lines.length; j++) {
+              const rowLine = lines[j];
+              if (!rowLine.trim()) break;
+              if (rowLine.indexOf('|') < 0) break;
+              const rowCells = parseTableRow(rowLine);
+              if (!rowCells) break;
+              rows.push(rowCells);
+            }
+            const head = '<thead><tr>' + headerCells.map(function (c, idx) {
+              const align = aligns[idx] || 'left';
+              return '<th style="text-align:' + align + '">' + formatInline(c) + '</th>';
+            }).join('') + '</tr></thead>';
+            const body = rows.length ? '<tbody>' + rows.map(function (r) {
+              return '<tr>' + headerCells.map(function (_, idx) {
+                const align = aligns[idx] || 'left';
+                const val = (idx < r.length) ? r[idx] : '';
+                return '<td style="text-align:' + align + '">' + formatInline(val) + '</td>';
+              }).join('') + '</tr>';
+            }).join('') + '</tbody>' : '';
+            out.push('<table class="md-table">' + head + body + '</table>');
+            i = j - 1;
+            continue;
+          }
+
+          if (/^(-{3,}|\*{3,}|_{3,})$/.test(trimmed)) {
+            flushParagraph();
+            flushList();
+            flushBlockquote();
+            out.push('<hr/>');
+            continue;
+          }
+
+          const headingMatch = trimmed.match(/^(#{1,6})\s+(.*)$/);
+          if (headingMatch) {
+            flushParagraph();
+            flushList();
+            flushBlockquote();
+            const level = headingMatch[1].length;
+            out.push('<h' + level + '>' + formatInline(headingMatch[2]) + '</h' + level + '>');
+            continue;
+          }
+
+          const bqMatch = trimmed.match(/^>\s?(.*)$/);
+          if (bqMatch) {
+            flushParagraph();
+            flushList();
+            blockquoteLines.push(bqMatch[1]);
+            continue;
+          } else {
+            flushBlockquote();
+          }
+
+          const ulMatch = trimmed.match(/^[-*+]\s+(.*)$/);
+          const olMatch = trimmed.match(/^\d+\.\s+(.*)$/);
+          if (ulMatch || olMatch) {
+            const nextType = olMatch ? 'ol' : 'ul';
+            if (listType && listType !== nextType) flushList();
+            listType = nextType;
+            listItems.push(ulMatch ? ulMatch[1] : olMatch[1]);
+            continue;
+          } else {
+            flushList();
+          }
+
+          paraLines.push(trimmed);
+        }
+
+        if (inCode) flushCode();
+        flushParagraph();
+        flushList();
+        flushBlockquote();
+
+        return out.join('');
+      }
+      function shouldRenderMarkdown(post) {
+        if (!CONFIG.markdownMode || CONFIG.markdownMode === 'off') return false;
+        if (CONFIG.markdownMode === 'all') return true;
+        const labels = (post && post.labels) ? post.labels : [];
+        const targets = Array.isArray(CONFIG.markdownLabels) ? CONFIG.markdownLabels : [];
+        const lowerTargets = targets.map(t => String(t || '').toLowerCase());
+        return labels.some(l => lowerTargets.includes(String(l || '').toLowerCase()));
+      }
+      function applyMarkdownIfNeeded(post) {
+        if (!shouldRenderMarkdown(post)) return;
+        const content = document.querySelector('#postContentContainer .post-content');
+        if (!content) return;
+        const raw = content.innerText || '';
+        content.innerHTML = markdownToHtml(raw);
+      }
+      function sanitizeCommentHtml(html) {
+        return String(html || '')
+          .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+          .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, '');
+      }
+      function safeJsonParse(s) { try { return JSON.parse(s); } catch (e) { return null; } }
+      function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+      function isMobileUA() { return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent); }
+      function getLabelParts(label) {
+        return String(label || '')
+          .split('-')
+          .map(part => part.trim())
+          .filter(Boolean);
+      }
+      function getPrimaryLabel(label) {
+        const parts = getLabelParts(label);
+        return parts.length ? parts[0] : '';
+      }
+      function isNoticeKeyword(part) {
+        const p = String(part || '').toLowerCase();
+        return p === '공지' || p === 'notice';
+      }
+      function getActivePathKey(path) {
+        if (!Array.isArray(path) || !path.length) return 'all';
+        let last = path[path.length - 1] || 'all';
+        if (isAllId(last)) last = getAllParentId(last);
+        if (!last || last === 'all') return 'all';
+        return last;
+      }
+      function isNoticeLabel(label) {
+        const parts = getLabelParts(label);
+        return !!parts.length && isNoticeKeyword(parts[parts.length - 1]);
+      }
+      function getNoticeScopeId(label) {
+        const parts = getLabelParts(label);
+        if (!parts.length) return '';
+        if (!isNoticeKeyword(parts[parts.length - 1])) return '';
+        if (parts.length === 1) return '';
+        return parts.slice(0, -1).join('-');
+      }
+      function isGlobalNotice(post) {
+        const labels = (post && post.labels) ? post.labels : [];
+        const hasNoticeLabel = labels.some(l => {
+          const parts = getLabelParts(l);
+          return parts.length && isNoticeKeyword(parts[0]);
+        });
+        if (hasNoticeLabel) return true;
+        return /^\s*\[공지\]/.test(post && post.title ? post.title : '');
+      }
+      function isNoticeForPath(post, path) {
+        const activeKey = getActivePathKey(path);
+        if (!activeKey || activeKey === 'all') return isGlobalNotice(post);
+        if (isNoticeKeyword(activeKey)) return isGlobalNotice(post);
+
+        const labels = (post && post.labels) ? post.labels : [];
+        for (let i = 0; i < labels.length; i++) {
+          const scope = getNoticeScopeId(labels[i]);
+          if (!scope) continue;
+          if (activeKey === scope || activeKey.startsWith(scope + '-')) return true;
+        }
+        if (/^\s*\[공지\]/.test(post && post.title ? post.title : '')) {
+          for (let i = 0; i < labels.length; i++) {
+            if (isHiddenTabLabel(labels[i])) continue;
+            if (isNoticeLabel(labels[i])) continue;
+            const norm = normalizeLabelKey(labels[i]);
+            if (!norm) continue;
+            if (norm === activeKey || norm.startsWith(activeKey + '-') || activeKey.startsWith(norm + '-')) return true;
+          }
+        }
+        return false;
+      }
+      function isHiddenTabLabel(label) {
+        const hidden = Array.isArray(CONFIG.hiddenTabLabels) ? CONFIG.hiddenTabLabels : [];
+        if (!hidden.length) return false;
+        const primary = String(getPrimaryLabel(label || '')).toLowerCase();
+        const norm = normalizeLabelKey(label).toLowerCase();
+        for (let i = 0; i < hidden.length; i++) {
+          const h = String(hidden[i] || '').toLowerCase();
+          if (!h) continue;
+          if (primary === h || norm === h) return true;
+        }
+        return false;
+      }
+      function getPrimaryVisibleLabel(labels) {
+        const list = Array.isArray(labels) ? labels : [];
+        for (let i = 0; i < list.length; i++) {
+          if (!isHiddenTabLabel(list[i])) return list[i];
+        }
+        return '';
+      }
+      function normalizeLabelKey(label) {
+        return getLabelParts(label).join('-');
+      }
+      function makeAllId(parentId) {
+        return parentId + TAB_ALL_SUFFIX;
+      }
+      function isAllId(id) {
+        return String(id || '').endsWith(TAB_ALL_SUFFIX);
+      }
+      function getAllParentId(id) {
+        return String(id || '').slice(0, -TAB_ALL_SUFFIX.length);
+      }
+      function isLabelUnder(parentId, label) {
+        const norm = normalizeLabelKey(label);
+        return norm === parentId || norm.startsWith(parentId + '-');
+      }
+      function buildLabelHtml(label) {
+        const parts = getLabelParts(label);
+        if (!parts.length) return '';
+        return parts.map((part, idx) => (
+          '<span class="label-chip' + (idx > 0 ? ' sub' : '') + '">' + escapeHtml(part) + '</span>'
+        )).join('<span class="label-sep">&gt;</span>');
+      }
+      function isSamePath(a, b) {
+        if (!Array.isArray(a) || !Array.isArray(b)) return false;
+        if (a.length !== b.length) return false;
+        for (let i = 0; i < a.length; i++) {
+          if (a[i] !== b[i]) return false;
+        }
+        return true;
+      }
+
+      function findTabNodeById(id, items) {
+        const list = items || [];
+        for (let i = 0; i < list.length; i++) {
+          const node = list[i];
+          if (node.id === id) return node;
+          if (node.subTabs && node.subTabs.length) {
+            const found = findTabNodeById(id, node.subTabs);
+            if (found) return found;
+          }
+        }
+        return null;
+      }
+
+      function hasDirectLabel(id) {
+        return STATE.posts.some(p => (p.labels || []).some(l => normalizeLabelKey(l) === id));
+      }
+      function hashString(s) {
+        let h = 0;
+        const str = String(s || '');
+        for (let i = 0; i < str.length; i++) {
+          h = ((h << 5) - h) + str.charCodeAt(i);
+          h |= 0;
+        }
+        return Math.abs(h);
+      }
+      function getAvatarColor(seed) {
+        const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8', '#81ecec'];
+        const idx = hashString(seed) % colors.length;
+        return colors[idx];
+      }
+      function getAvatarText(name) {
+        const trimmed = String(name || '').trim();
+        if (!trimmed) return '?';
+        const chars = Array.from(trimmed);
+        return chars[0].toUpperCase();
+      }
+
+      function getUserLocale() {
+        return (navigator.languages && navigator.languages[0]) ? navigator.languages[0] : (navigator.language || 'en');
+      }
+      function isReloadNavigation() {
+        try {
+          const nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')) || [];
+          if (nav && nav[0] && nav[0].type) return nav[0].type === 'reload';
+          if (performance.navigation && typeof performance.navigation.type === 'number') return performance.navigation.type === 1;
+        } catch (e) {}
+        return false;
+      }
+
+      function formatDate(d) {
+        const date = new Date(d);
+        if (isNaN(date.getTime())) return '';
+        try {
+          return new Intl.DateTimeFormat(getUserLocale(), { month: 'numeric', day: 'numeric' }).format(date);
+        } catch (e) {
+          return (date.getMonth() + 1) + '.' + date.getDate();
+        }
+      }
+
+      function formatTime(d) {
+        const date = new Date(d);
+        if (isNaN(date.getTime())) return '';
+        try {
+          return new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric', month: '2-digit', day: '2-digit' }).format(date);
+        } catch (e) {
+          return date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
+        }
+      }
+
+      function formatPostMetaDate(d) {
+        const date = new Date(d);
+        if (isNaN(date.getTime())) return '';
+        const locale = getUserLocale();
+        if (String(locale).toLowerCase().startsWith('ko')) {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const day = String(date.getDate()).padStart(2, '0');
+          const weekday = new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(date);
+          return year + '년' + month + '월' + day + '일(' + weekday + ')';
+        }
+        try {
+          return new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: '2-digit', weekday: 'short' }).format(date);
+        } catch (e) {
+          return date.toDateString();
+        }
+      }
+
+      function setLoadingBar(percent) {
+        const p = clamp(percent, 0, 100);
+        const el = document.getElementById('loadingBar');
+        if(el) el.style.width = p.toFixed(2) + '%';
+      }
+
+      function toast(msg, actionLabel, actionFn, cancelLabel, cancelFn) {
+        const el = document.getElementById('toast');
+        const text = document.getElementById('toastText');
+        const action = document.getElementById('toastAction');
+        const closeBtn = document.getElementById('toastClose');
+        if (!el || !text || !action) return;
+
+        text.textContent = msg || '';
+        action.classList.remove('visible');
+        if (closeBtn) closeBtn.classList.remove('visible');
+        action.onclick = null;
+        if (closeBtn) closeBtn.onclick = null;
+
+        if (actionLabel && typeof actionFn === 'function') {
+          action.textContent = actionLabel;
+          action.classList.add('visible');
+          action.onclick = function () {
+            try { actionFn(); } catch (e) {}
+            el.classList.remove('show');
+          };
+        }
+        if (closeBtn && (actionLabel || cancelLabel)) {
+          closeBtn.textContent = cancelLabel || '취소';
+          closeBtn.classList.add('visible');
+          closeBtn.onclick = function () {
+            if (typeof cancelFn === 'function') {
+              try { cancelFn(); } catch (e) {}
+            }
+            el.classList.remove('show');
+          };
+        }
+
+        el.classList.add('show');
+        clearTimeout(STATE.toastTimer);
+        const ttl = (actionLabel || cancelLabel) ? 5000 : 1600;
+        STATE.toastTimer = setTimeout(() => el.classList.remove('show'), ttl);
+      }
+
+      function fallbackCopyTextToClipboard(text) {
+          var textArea = document.createElement("textarea");
+          textArea.value = text;
+          textArea.style.top = "0";
+          textArea.style.left = "0";
+          textArea.style.position = "fixed";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+              var successful = document.execCommand('copy');
+              var msg = successful ? '링크가 복사되었습니다.' : '복사 실패';
+              toast(msg);
+          } catch (err) {
+              toast('복사 실패. 수동으로 복사해주세요.');
+          }
+          document.body.removeChild(textArea);
+      }
+
+      function copyLink(text) {
+          const val = text || location.href;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+               navigator.clipboard.writeText(val).then(() => {
+                   toast('링크가 복사되었습니다.');
+               }).catch(() => {
+                   fallbackCopyTextToClipboard(val);
+               });
+          } else {
+              fallbackCopyTextToClipboard(val);
+          }
+      }
+
+      // Share Modal Logic
+      function openShareOptions() {
+        const modal = document.getElementById('shareOptionsModal');
+        if(modal) {
+            openOverlay(modal);
+            // Dynamic binding for modal buttons (context aware)
+            const copyBtn = document.getElementById('shareCopyBtn');
+            const twBtn = document.getElementById('shareTwitterBtn');
+            const natBtn = document.getElementById('shareNativeBtn');
+            const url = location.href;
+            const title = document.title;
+            
+            if(copyBtn) copyBtn.onclick = () => { copyLink(url); closeTopOverlay(); };
+            if(twBtn) twBtn.onclick = () => { window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(title)+'&url='+encodeURIComponent(url), '_blank'); closeTopOverlay(); };
+            if(natBtn) natBtn.onclick = () => { 
+                if(navigator.share) navigator.share({title, url}).catch(()=>{}); 
+                else toast('이 브라우저에서는 지원하지 않습니다.');
+                closeTopOverlay();
+            };
+            const closeBtn = document.getElementById('shareCloseBtn');
+            if(closeBtn) closeBtn.onclick = () => closeTopOverlay();
+        }
+      }
+      
+      async function handleShare(btn) {
+        // Trigger share modal
+        openShareOptions();
+      }
+
+      function debounce(fn, delay) {
+        clearTimeout(STATE.searchTimer);
+        STATE.searchTimer = setTimeout(fn, delay);
+      }
+
+      function getHomeUrl() {
+        const a = document.getElementById('homeLink');
+        const href = a ? a.getAttribute('href') : '';
+        return href || (location.origin + '/');
+      }
+
+      // ---------- Persistence ----------
+      function loadReadMap() {
+        const raw = localStorage.getItem(STORAGE_READ);
+        const m = safeJsonParse(raw);
+        STATE.readMap = (m && typeof m === 'object') ? m : {};
+      }
+      function saveReadMap() {
+        try { localStorage.setItem(STORAGE_READ, JSON.stringify(STATE.readMap)); } catch (e) {}
+      }
+      function loadProgressMap() {
+        const raw = localStorage.getItem(STORAGE_PROGRESS);
+        const m = safeJsonParse(raw);
+        STATE.progressMap = (m && typeof m === 'object') ? m : {};
+      }
+      function saveProgressMap() {
+        try { localStorage.setItem(STORAGE_PROGRESS, JSON.stringify(STATE.progressMap)); } catch (e) {}
+      }
+
+      function loadReaderPrefs() {
+        const raw = localStorage.getItem(STORAGE_READER);
+        const p = safeJsonParse(raw);
+        if (p && typeof p === 'object') {
+          const fs = Number(p.fontSize); const w = Number(p.width);
+          if (!isNaN(fs)) STATE.readerPrefs.fontSize = clamp(fs, 14, 22);
+          if (!isNaN(w)) STATE.readerPrefs.width = (w === 1100 ? 1100 : 900);
+        }
+      }
+      function saveReaderPrefs() {
+        try { localStorage.setItem(STORAGE_READER, JSON.stringify(STATE.readerPrefs)); } catch (e) {}
+      }
+      function applyReaderPrefs() {
+        document.documentElement.style.setProperty('--reader-font-size', STATE.readerPrefs.fontSize + 'px');
+        document.documentElement.style.setProperty('--reader-width', STATE.readerPrefs.width + 'px');
+      }
+
+      function savePrefs() {
+        const payload = {
+          selectedPath: STATE.listPath,
+          viewMode: STATE.viewMode,
+          filterMode: STATE.filterMode,
+          sortMode: STATE.sortMode,
+          searchQuery: STATE.searchQuery,
+          page: STATE.page
+        };
+        try { localStorage.setItem(STORAGE_STATE, JSON.stringify(payload)); } catch (e) {}
+      }
+
+      function restorePrefs() {
+        // theme
+        const theme = localStorage.getItem(STORAGE_THEME);
+        if (theme === 'dark' || theme === 'light') CONFIG.theme = theme;
+
+        // list state
+        const raw = localStorage.getItem(STORAGE_STATE);
+        const p = safeJsonParse(raw);
+        if (p && typeof p === 'object') {
+          if (Array.isArray(p.selectedPath) && p.selectedPath.length) {
+            STATE.selectedPath = p.selectedPath;
+            STATE.listPath = p.selectedPath.slice();
+          }
+          if (p.viewMode === 'grid' || p.viewMode === 'list') STATE.viewMode = p.viewMode;
+          if (p.filterMode === 'all' || p.filterMode === 'notice') STATE.filterMode = p.filterMode;
+          if (p.sortMode === 'new' || p.sortMode === 'old' || p.sortMode === 'title' || p.sortMode === 'notice') STATE.sortMode = p.sortMode;
+          if (typeof p.searchQuery === 'string') STATE.searchQuery = p.searchQuery;
+          const pg = Number(p.page);
+          if (!isNaN(pg) && pg >= 1) STATE.page = pg;
+        }
+      }
+
+      // ---------- URL Routing ----------
+      function parseListQuery() {
+        const u = new URL(location.href);
+        const path = u.searchParams.get('path');
+        const q = u.searchParams.get('q') || '';
+        const view = u.searchParams.get('view') || '';
+        const filter = u.searchParams.get('filter') || '';
+        const sort = u.searchParams.get('sort') || '';
+        const page = u.searchParams.get('page') || '';
+
+        const out = {};
+        if (path) {
+          const parts = path.split(',').map(s => decodeURIComponent(s.trim())).filter(Boolean);
+          if (parts.length) out.selectedPath = parts;
+        }
+        if (typeof q === 'string') out.searchQuery = q;
+        if (view === 'grid' || view === 'list') out.viewMode = view;
+        if (filter === 'all' || filter === 'notice') out.filterMode = filter;
+        if (sort === 'new' || sort === 'old' || sort === 'title' || sort === 'notice') out.sortMode = sort;
+
+        const pg = Number(page);
+        if (!isNaN(pg) && pg >= 1) out.page = pg;
+
+        return out;
+      }
+
+      function buildListUrlFromState() {
+        const base = getHomeUrl();
+        const u = new URL(base, location.origin);
+
+        // preserve pathname only (base may be absolute)
+        const path = (STATE.listPath && STATE.listPath.length) ? STATE.listPath : STATE.selectedPath;
+        u.searchParams.set('path', path.map(s => encodeURIComponent(s)).join(','));
+        if (STATE.searchQuery) u.searchParams.set('q', STATE.searchQuery); else u.searchParams.delete('q');
+        u.searchParams.set('view', STATE.viewMode);
+        u.searchParams.set('filter', STATE.filterMode);
+        u.searchParams.set('sort', STATE.sortMode);
+        if (STATE.page > 1) u.searchParams.set('page', String(STATE.page)); else u.searchParams.delete('page');
+
+        return u.pathname + (u.search ? u.search : '');
+      }
+
+      function syncUrlFromState({ replace } = { replace: true }) {
+        if (STATE.isReading) return;
+        const url = buildListUrlFromState();
+        const st = { view: 'list' };
+        try {
+          if (replace) history.replaceState(st, '', url);
+          else history.pushState(st, '', url);
+        } catch (e) {}
+      }
+
+      // ---------- Tabs hierarchy ----------
+      function buildHierarchy(labels) {
+        const root = [];
+        const normalized = labels.map(normalizeLabelKey).filter(Boolean);
+        const sorted = Array.from(new Set(normalized)).sort((a, b) => String(a).localeCompare(String(b)));
+        sorted.forEach(label => {
+          const parts = getLabelParts(label);
+          let current = root;
+          parts.forEach((part, idx) => {
+            const fullId = parts.slice(0, idx + 1).join('-');
+            let node = current.find(n => n.id === fullId);
+            if (!node) { node = { id: fullId, label: part, subTabs: [] }; current.push(node); }
+            current = node.subTabs;
+          });
+        });
+        return root;
+      }
+
+      function normalizeSelectedPath() {
+        const path = [];
+        let items = STATE.tabs;
+        const saved = Array.isArray(STATE.selectedPath) ? STATE.selectedPath : ['all'];
+        for (let i = 0; i < saved.length; i++) {
+          const id = saved[i];
+          if (isAllId(id)) {
+            const parentId = getAllParentId(id);
+            if (path[path.length - 1] !== parentId) {
+              const parentFound = items.find(t => t.id === parentId);
+              if (!parentFound) break;
+              path.push(parentFound.id);
+              items = parentFound.subTabs || [];
+            }
+            path.push(id);
+            items = [];
+            break;
+          }
+          const found = items.find(t => t.id === id);
+          if (!found) break;
+          path.push(found.id);
+          items = found.subTabs || [];
+          if (!items.length) break;
+        }
+        STATE.selectedPath = path.length ? path : ['all'];
+        autoSelectAllIfNeeded();
+        STATE.listPath = STATE.selectedPath.slice();
+      }
+
+      // ---------- Feed fetch + cache ----------
+      async function fetchJson(url) {
+        try {
+          const res = await fetch(url, { credentials: 'same-origin' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const text = await res.text();
+          try {
+            return JSON.parse(text);
+          } catch (e) {
+            // response was text/html (likely 404 or auth page) starting with <
+            console.warn('Feed response was not JSON:', text.substring(0, 50));
+            throw new Error('Not JSON'); 
+          }
+        } catch (err) {
+          throw err;
+        }
+      }
+
+      function cacheGet(key, ttlMs) {
+        try {
+          const raw = sessionStorage.getItem(key);
+          const obj = safeJsonParse(raw);
+          if (!obj || !obj.t || !obj.v) return null;
+          const ttl = (typeof ttlMs === 'number') ? ttlMs : CACHE_TTL_MS;
+          if ((Date.now() - obj.t) > ttl) return null;
+          return obj.v;
+        } catch (e) { return null; }
+      }
+      function cacheSet(key, value) {
+        try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), v: value })); } catch (e) {}
+      }
+
+      function extractFirstImage(html) {
+        if (!html) return '';
+        const m = String(html).match(/<img[^>]+src=["']([^"']+)["']/i);
+        return m ? m[1] : '';
+      }
+      function upgradeThumb(url, size) {
+        if (!url) return '';
+        const s = size || 480;
+        let u = url.replace(/\/s\d+\-c\//, '/s' + s + '-c/').replace(/=s\d+\-c/, '=s' + s + '-c');
+        if (u.includes('youtube.com') && u.includes('default.jpg')) {
+            u = u.replace('default.jpg', 'mqdefault.jpg');
+        }
+        return u;
+      }
+
+      function parseEntry(entry) {
+        const rawId = entry && entry.id && entry.id.$t ? entry.id.$t : '';
+        const idMatch = rawId.match(/post-(\d+)$/);
+        const postId = idMatch ? idMatch[1] : rawId;
+
+        const title = entry && entry.title ? entry.title.$t : '';
+        const author = entry && entry.author && entry.author[0] ? entry.author[0].name.$t : '';
+        const published = entry && entry.published ? entry.published.$t : '';
+        const labels = entry && entry.category ? entry.category.map(c => c.term) : [];
+        const urlObj = (entry && entry.link ? entry.link.find(l => l.rel === 'alternate' && l.type === 'text/html') : null);
+        const url = urlObj ? urlObj.href : '';
+        const contentHtml = entry && entry.content ? entry.content.$t : (entry && entry.summary ? entry.summary.$t : '');
+        const commentCount = entry && entry['thr$total'] && entry['thr$total'].$t ? entry['thr$total'].$t : '';
+
+        const thumb = entry && entry.media$thumbnail ? entry.media$thumbnail.url : extractFirstImage(contentHtml);
+        const isNotice = labels.some(l => {
+          const parts = getLabelParts(l);
+          const head = parts.length ? parts[0] : '';
+          return head === 'Notice' || head === '공지';
+        }) || /^\s*\[공지\]/.test(title);
+
+        // New Badge (within 3 days)
+        const isNew = (Date.now() - new Date(published).getTime()) < (3 * 24 * 60 * 60 * 1000);
+
+        return {
+          postId,
+          title,
+          author,
+          published,
+          labels,
+          url,
+          contentHtml,
+          thumbnail: upgradeThumb(thumb, 640),
+          commentCount,
+          isNotice,
+          isNew
+        };
+      }
+
+      // Single Fetch Logic: load 500 items once
+      async function loadAllPosts(replace = false, force = false) {
+        if (STATE.loading) return;
+        STATE.loading = true;
+
+        const url = CONFIG.feedBase + '?alt=json' + '&max-results=500';
+        const cacheKey = CACHE_PREFIX + 'all';
+
+        if (force) {
+          try { sessionStorage.removeItem(cacheKey); } catch (e) {}
+        }
+        const cached = force ? null : cacheGet(cacheKey);
+        if (cached && cached.feed) {
+             processFeed(cached, replace);
+             STATE.loading = false;
+             return;
+        }
+
+        try {
+            const json = await fetchJson(url);
+            cacheSet(cacheKey, json);
+            processFeed(json, replace);
+        } catch(e) {
+             showError('피드를 불러오지 못했습니다.', () => loadAllPosts(replace));
+        } finally {
+            STATE.loading = false;
+        }
+      }
+
+      function processFeed(json, replace) {
+          const entries = json.feed.entry || [];
+          const parsed = entries.map(parseEntry);
+          
+          if(replace) STATE.posts = [];
+          STATE.posts = parsed; // Store all 500 items in memory
+
+          // Generate Tabs
+          const allLabels = [];
+          STATE.posts.forEach(p => (p.labels || []).forEach(l => {
+            if (isNoticeLabel(l) && getLabelParts(l).length > 1) return;
+            if (!isHiddenTabLabel(l)) allLabels.push(l);
+          }));
+          STATE.tabs = [{ id: 'all', label: '전체', subTabs: [] }].concat(buildHierarchy(allLabels));
+          normalizeSelectedPath();
+
+          updateView();
+      }
+
+      async function fetchSinglePost(postId) {
+        const cacheKey = POST_CACHE_PREFIX + postId;
+        const cached = cacheGet(cacheKey);
+        if (cached && cached.entry) {
+          try { return parseEntry(cached.entry); } catch (e) {}
+        }
+        // Fetch full content from /feeds/posts/default/postId
+        const url = '/feeds/posts/default/' + postId + '?alt=json';
+        const json = await fetchJson(url);
+        if (json && json.entry) cacheSet(cacheKey, json);
+        const entry = json && json.entry ? json.entry : null;
+        if (!entry) throw new Error('No entry');
+        return parseEntry(entry);
+      }
+
+      // ---------- UI Render ----------
+      function showError(msg, retryFn) {
+        const c = document.getElementById('contentArea');
+        if(!c) return;
+        c.className = 'content-grid';
+        c.innerHTML =
+          '<div class="error-msg">' +
+            '<div>' + escapeHtml(msg) + '</div>' +
+            '<div class="error-actions">' +
+              '<button class="btn-retry" id="retryBtn" type="button">재시도</button>' +
+            '</div>' +
+          '</div>';
+        setTimeout(function () {
+          const b = document.getElementById('retryBtn');
+          if (b && typeof retryFn === 'function') b.onclick = retryFn;
+        }, 0);
+      }
+
+      function renderTabLayers() {
+        const host = document.getElementById('tabLayers');
+        if(!host) return;
+        const activePath = (STATE.listPath && STATE.listPath.length) ? STATE.listPath : (Array.isArray(STATE.selectedPath) ? STATE.selectedPath : []);
+        const renderPath = (STATE.hoverPath && STATE.hoverPath.length) ? STATE.hoverPath : activePath;
+        const pathKey = 'r:' + (Array.isArray(renderPath) ? renderPath.join('|') : '') +
+          '|a:' + (Array.isArray(activePath) ? activePath.join('|') : '');
+        if (STATE.lastTabRenderKey === pathKey && host.childNodes.length) return;
+
+        const frag = document.createDocumentFragment();
+        renderLayer(frag, 0, STATE.tabs, null, activePath, renderPath);
+
+        let currentItems = STATE.tabs;
+        for (let level = 0; level < renderPath.length; level++) {
+          const renderId = renderPath[level];
+          const found = currentItems.find(t => t.id === renderId);
+          if (found && found.subTabs && found.subTabs.length > 0) {
+            renderLayer(frag, level + 1, found.subTabs, found.id, activePath, renderPath);
+            currentItems = found.subTabs;
+          } else {
+            break;
+          }
+        }
+
+        host.replaceChildren(frag);
+        STATE.lastTabRenderKey = pathKey;
+        STATE.lastTabRenderAt = Date.now();
+        if (!STATE.tabsReady) {
+          document.body.classList.add('tabs-ready');
+          STATE.tabsReady = true;
+        }
+      }
+
+      function renderLayer(host, level, items, parentId, activePath, renderPath) {
+        const nav = document.createElement('div');
+        nav.className = 'tabs layer';
+        nav.dataset.level = String(level);
+        nav.setAttribute('role', 'tablist');
+
+        const activeId = (activePath && activePath[level]) ? activePath[level] : (level === 0 ? 'all' : '');
+        const list = (parentId && items.length)
+          ? [{ id: makeAllId(parentId), label: '전체보기', isAll: true }].concat(items)
+          : items;
+
+        nav.innerHTML = list.map(t => (
+          '<button class="tab-btn ' + (t.isAll ? 'all ' : '') + (activeId === t.id ? 'active' : '') + '"' +
+            ' data-tab="' + escapeHtml(t.id) + '"' +
+            ' role="tab"' +
+            ' aria-selected="' + (activeId === t.id ? 'true' : 'false') + '"' +
+            ' aria-label="' + escapeHtml(t.label) + '"' +
+          '>' + escapeHtml(t.label) + '</button>'
+        )).join('');
+        host.appendChild(nav);
+      }
+
+      function autoSelectAllIfNeeded() {
+        const currentId = STATE.selectedPath[STATE.selectedPath.length - 1] || 'all';
+        if (currentId === 'all' || isAllId(currentId)) return;
+        const node = findTabNodeById(currentId, STATE.tabs);
+        if (!node || !node.subTabs || !node.subTabs.length) return;
+        if (hasDirectLabel(currentId)) return;
+        STATE.selectedPath.push(makeAllId(currentId));
+      }
+
+
+      function highlightQuery(text, query) {
+        const t = String(text || '');
+        const q = String(query || '').trim();
+        if (!q) return escapeHtml(t);
+        const idx = t.toLowerCase().indexOf(q.toLowerCase());
+        if (idx < 0) return escapeHtml(t);
+        const a = t.slice(0, idx);
+        const b = t.slice(idx, idx + q.length);
+        const c = t.slice(idx + q.length);
+        return escapeHtml(a) + '<span class="title-hl">' + escapeHtml(b) + '</span>' + escapeHtml(c);
+      }
+
+      function getFilteredData() {
+        const activePath = (STATE.listPath && STATE.listPath.length) ? STATE.listPath : STATE.selectedPath;
+        const currentId = activePath[activePath.length - 1] || 'all';
+        let d = STATE.posts.slice(); // Filter from ALL posts in memory
+
+        if (currentId !== 'all') {
+          if (isAllId(currentId)) {
+            const parentId = getAllParentId(currentId);
+            d = d.filter(item => (item.labels || []).some(cat => isLabelUnder(parentId, cat)));
+          } else {
+            d = d.filter(item => (item.labels || []).some(cat => normalizeLabelKey(cat) === currentId));
+          }
+        }
+        const isNoticeActive = function (post) { return isNoticeForPath(post, activePath); };
+        if (STATE.filterMode === 'notice') d = d.filter(isNoticeActive);
+        if (STATE.searchQuery) d = d.filter(i => (i.title || '').toLowerCase().includes(STATE.searchQuery.toLowerCase()));
+
+        // sort
+        if (STATE.sortMode === 'new') d.sort((a, b) => new Date(b.published) - new Date(a.published));
+        else if (STATE.sortMode === 'old') d.sort((a, b) => new Date(a.published) - new Date(b.published));
+        else if (STATE.sortMode === 'title') d.sort((a, b) => String(a.title).localeCompare(String(b.title)));
+        else if (STATE.sortMode === 'notice') d.sort((a, b) => {
+          const an = isNoticeActive(a);
+          const bn = isNoticeActive(b);
+          return (bn === an) ? (new Date(b.published) - new Date(a.published)) : (bn ? 1 : -1);
+        });
+
+        return d;
+      }
+
+      function renderNotices() {
+        const c = document.getElementById('noticeArea');
+        if(!c) return;
+        const activePath = (STATE.listPath && STATE.listPath.length) ? STATE.listPath : STATE.selectedPath;
+        const n = STATE.posts.filter(i => isNoticeForPath(i, activePath)).slice(0, 3);
+        if (!n.length || STATE.filterMode === 'notice' || STATE.isReading) { c.classList.add('hidden'); return; }
+        c.classList.remove('hidden');
+        c.innerHTML = n.map(i => (
+          '<div class="notice-card fade-in" role="button" tabindex="0" data-open-post="1" data-post-id="' + escapeHtml(i.postId) + '" aria-label="Open notice">' +
+            '<div class="flex items-center" style="overflow:hidden; gap:8px;">' +
+              '<span class="notice-badge">공지</span>' +
+              '<span class="notice-title">' + escapeHtml(i.title) + '</span>' +
+            '</div>' +
+            '<div style="font-size:12px; color:var(--text-tertiary); min-width:60px; text-align:right;">' + formatDate(i.published) + '</div>' +
+          '</div>'
+        )).join('');
+      }
+
+      function renderContent() {
+        const c = document.getElementById('contentArea');
+        if(!c) return;
+        
+        const f = getFilteredData();
+        const slice = f.slice(0, STATE.page * CONFIG.pageSize);
+        const hasMore = f.length > slice.length;
+
+        const btn = document.getElementById('loadMoreBtn');
+        if(btn) btn.style.display = hasMore ? 'block' : 'none';
+
+        if (!slice.length) {
+          c.className = 'content-grid';
+          c.innerHTML = '<div class="empty-state"><p>' + (STATE.posts.length === 0 ? '' : 'No posts found.') + '</p></div>';
+          return;
+        }
+
+        c.className = (STATE.viewMode === 'grid') ? 'content-grid' : 'content-list';
+
+        c.innerHTML = slice.map((i, idx) => {
+          const delay = (idx % CONFIG.pageSize) * 0.03;
+          const tag = getPrimaryVisibleLabel(i.labels) || 'BLOG';
+          const thumb = i.thumbnail || '';
+          const isRead = !!STATE.readMap[String(i.postId)];
+          const labelHtml = buildLabelHtml(tag);
+          const thumbTag = getPrimaryLabel(tag);
+          const hasThumb = !!thumb;
+          const commentCountNum = parseInt(i.commentCount, 10);
+          const commentHtml = commentCountNum > 0 ? '<span class="list-comments">댓글 ' + commentCountNum + '</span>' : '';
+          const thumbHtml = hasThumb
+            ? '<img src="' + escapeHtml(thumb) + '" class="card-thumb" loading="lazy" alt="' + escapeHtml(i.title || 'Post thumbnail') + '" decoding="async" onload="this.classList.add(\'loaded\')"/>'
+            : '<div class="card-thumb empty">' + (thumbTag ? '<span class="thumb-tag">' + escapeHtml(thumbTag) + '</span>' : '<span class="thumb-tag">POST</span>') + '</div>';
+
+          if (STATE.viewMode === 'list') {
+            return (
+              '<article class="list-row" role="button" tabindex="0"' +
+                ' data-open-post="1" data-post-id="' + escapeHtml(i.postId) + '"' +
+                ' aria-label="Open post ' + escapeHtml(i.title) + '">' +
+                '<div class="list-left">' +
+                  (thumbTag ? '<span class="list-label">' + escapeHtml(thumbTag) + '</span>' : '') +
+                  '<div class="list-title">' + highlightQuery(i.title, STATE.searchQuery) + '</div>' +
+                  commentHtml +
+                  (isRead ? '<span class="list-read">READ</span>' : '') +
+                '</div>' +
+                '<div class="list-right">' +
+                  '<span class="list-author">' + escapeHtml(i.author) + '</span>' +
+                  '<span class="list-date">' + formatDate(i.published) + '</span>' +
+                '</div>' +
+              '</article>'
+            );
+          }
+          return (
+            '<article class="card fade-in' + (hasThumb ? '' : ' no-thumb') + '" style="animation-delay:' + delay + 's" role="button" tabindex="0"' +
+              ' data-open-post="1" data-post-id="' + escapeHtml(i.postId) + '"' +
+              ' aria-label="Open post ' + escapeHtml(i.title) + '">' +
+              (i.isNew ? '<div class="new-badge">N</div>' : '') +
+              (isRead ? '<div class="read-badge">READ</div>' : '') +
+              thumbHtml +
+              '<div class="card-body">' +
+                '<div class="card-meta-top">' + (labelHtml ? '<div class="label-stack">' + labelHtml + '</div>' : '') + '</div>' +
+                '<h3 class="card-title">' + highlightQuery(i.title, STATE.searchQuery) + '</h3>' +
+                '<div class="card-footer"><span>' + escapeHtml(i.author) + '</span><span>' + formatDate(i.published) + '</span></div>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      function updateView({ syncUrl } = { syncUrl: true }) {
+        if(STATE.isReading) return;
+        STATE.hoverPath = [];
+        renderTabLayers();
+        renderNotices();
+        renderContent();
+
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === STATE.viewMode));
+        document.querySelectorAll('.filter-chip').forEach(b => b.classList.toggle('active', b.dataset.filter === STATE.filterMode));
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) sortSelect.value = STATE.sortMode;
+
+        savePrefs();
+        if (syncUrl) syncUrlFromState({ replace: true });
+      }
+
+      // ---------- Reading mode switching ----------
+      function setReadingMode(isReading) {
+        STATE.isReading = !!isReading;
+        document.body.classList.toggle('is-reading', STATE.isReading);
+
+        const list = document.getElementById('listViewArea');
+        const single = document.getElementById('singlePostView');
+
+        if (STATE.isReading) {
+          if(list) list.style.display = 'none';
+          if(single) {
+              single.style.display = 'block';
+              single.classList.remove('hidden');
+          }
+        } else {
+          if(single) single.style.display = 'none';
+          if(list) list.style.display = 'block';
+        }
+      }
+
+      function updateReadingProgressBar() {
+        if (!STATE.isReading) return;
+        const container = document.querySelector('#postContentContainer .post-content');
+        if (!container) return;
+
+        const rect = container.getBoundingClientRect();
+        const top = window.scrollY + rect.top;
+        const height = container.scrollHeight;
+        const viewport = window.innerHeight;
+
+        const current = window.scrollY - top;
+        const denom = Math.max(1, height - viewport);
+        const ratio = current / denom;
+        setLoadingBar(ratio * 100);
+
+        // save progress (throttle-ish)
+        if (STATE.currentPost && STATE.currentPost.postId) {
+          const pid = String(STATE.currentPost.postId);
+          const prev = STATE.progressMap[pid];
+          const now = window.scrollY || 0;
+          if (!prev || Math.abs(prev - now) > 200) {
+            STATE.progressMap[pid] = now;
+            saveProgressMap();
+          }
+        }
+      }
+
+      function slugify(text) {
+        return String(text || '')
+          .trim()
+          .toLowerCase()
+          .replace(/[\s]+/g, '-')
+          .replace(/[^\w\-가-힣]/g, '')
+          .slice(0, 60);
+      }
+
+      function cleanupTOC() {
+        if (STATE.tocObserver) {
+          try { STATE.tocObserver.disconnect(); } catch (e) {}
+          STATE.tocObserver = null;
+        }
+        STATE.tocItems = [];
+      }
+
+      function buildTOC() {
+        cleanupTOC();
+
+        const root = document.querySelector('#postContentContainer .post-card');
+        const content = document.querySelector('#postContentContainer .post-content');
+        if (!root || !content) return;
+
+        const headings = Array.from(content.querySelectorAll('h2, h3')).slice(0, 24);
+        if (!headings.length) return;
+
+        const used = {};
+        headings.forEach((h, idx) => {
+          if (!h.id) {
+            let id = slugify(h.textContent) || ('section-' + (idx + 1));
+            if (used[id]) id = id + '-' + (idx + 1);
+            used[id] = 1;
+            h.id = id;
+          }
+        });
+
+        const tocHtml =
+          '<div class="toc" id="tocBox">' +
+            '<div class="toc-title">' +
+                '<span style="color:var(--accent-primary);">TOC</span>' +
+                '<span style="color:var(--text-tertiary); font-weight:900;">목차</span>' +
+            '</div>' +
+            '<div class="toc-list" id="tocList">' +
+              headings.map((h, i) => {
+                const lvl = (h.tagName.toLowerCase() === 'h3') ? '3' : '2';
+                const pad = (lvl === '3') ? 'padding-left:18px;' : '';
+                return (
+                  '<a class="toc-item" href="#' + escapeHtml(h.id) + '" data-toc-id="' + escapeHtml(h.id) + '" style="' + pad + '">' +
+                    '<span class="toc-text">' + escapeHtml(h.textContent) + '</span>' +
+                  '</a>'
+                );
+              }).join('') +
+            '</div>' +
+          '</div>';
+
+        const header = root.querySelector('.post-header');
+        if (header) header.insertAdjacentHTML('beforeend', tocHtml);
+
+        const tocItems = Array.from(document.querySelectorAll('.toc-item'));
+        const byId = {};
+        tocItems.forEach(a => { byId[a.getAttribute('data-toc-id')] = a; });
+
+        STATE.tocObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            const id = en.target.id;
+            const link = byId[id];
+            if (!link) return;
+            if (en.isIntersecting) {
+              tocItems.forEach(x => x.classList.remove('active'));
+              link.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-30% 0px -60% 0px', threshold: 0.01 });
+
+        headings.forEach(h => STATE.tocObserver.observe(h));
+      }
+
+      function enhancePostContent(post) {
+        const content = document.querySelector('#postContentContainer .post-content');
+        if (!content) return;
+
+        // external links => new tab + noopener
+        const links = Array.from(content.querySelectorAll('a[href]'));
+        links.forEach(function (a) {
+          const href = a.getAttribute('href') || '';
+          if (!href) return;
+          if (/^https?:\/\//i.test(href) && href.indexOf(location.origin) !== 0) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+
+        // images: lazy loading + alt fallback for better quality signals
+        const imgs = Array.from(content.querySelectorAll('img'));
+        imgs.forEach(function (img) {
+          if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
+          if (!img.getAttribute('decoding')) img.setAttribute('decoding', 'async');
+          if (!img.getAttribute('alt')) {
+            img.setAttribute('alt', (post && post.title) ? post.title : 'Post image');
+          }
+        });
+
+        // iframes: lazy loading for performance
+        const iframes = Array.from(content.querySelectorAll('iframe'));
+        iframes.forEach(function (frame) {
+          if (!frame.getAttribute('loading')) frame.setAttribute('loading', 'lazy');
+        });
+
+        // code copy buttons
+        const pres = Array.from(content.querySelectorAll('pre'));
+        pres.forEach(function (pre) {
+          if (pre.querySelector('.code-toolbar')) return;
+          const tb = document.createElement('div');
+          tb.className = 'code-toolbar';
+
+          const btn = document.createElement('button');
+          btn.className = 'code-copy';
+          btn.type = 'button';
+          btn.textContent = 'COPY';
+          btn.setAttribute('data-code-copy', '1');
+
+          tb.appendChild(btn);
+          pre.appendChild(tb);
+        });
+      }
+
+      function buildRelated(post) {
+        const root = document.querySelector('#postContentContainer .post-card');
+        if (!root || !post) return;
+
+        const labels = post.labels || [];
+        const primary = getPrimaryVisibleLabel(labels);
+        if (!primary) return;
+
+        const candidates = STATE.posts
+          .filter(p => p && p.postId && String(p.postId) !== String(post.postId))
+          .filter(p => (p.labels || []).some(l => String(l).startsWith(primary)))
+          .sort((a, b) => new Date(b.published) - new Date(a.published))
+          .slice(0, 8);
+
+        if (!candidates.length) return;
+
+        const html =
+          '<div class="related-wrap" id="relatedWrap">' +
+             '<button class="related-scroll-btn prev"><svg class="icon" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>' +
+            '<div class="related-title">Related</div>' +
+            '<div class="related-grid" id="relatedGrid">' +
+              candidates.map(function (p) {
+                const label = getPrimaryVisibleLabel(p.labels);
+                const thumbTag = getPrimaryLabel(label);
+                const thumbHtml = p.thumbnail
+                  ? '<img class="related-thumb" src="' + escapeHtml(p.thumbnail) + '" alt="' + escapeHtml(p.title || 'Related post') + '" loading="lazy" decoding="async"/>'
+                  : '<div class="related-thumb related-thumb-empty">' + (thumbTag ? '<span class="related-thumb-tag">' + escapeHtml(thumbTag) + '</span>' : '<span class="related-thumb-tag">POST</span>') + '</div>';
+                return (
+                  '<div class="related-card" role="button" tabindex="0" data-open-post="1" data-post-id="' + escapeHtml(p.postId) + '">' +
+                    thumbHtml +
+                    '<div class="related-body">' +
+                      '<div class="related-name">' + escapeHtml(p.title) + '</div>' +
+                    '</div>' +
+                  '</div>'
+                );
+              }).join('') +
+            '</div>' +
+            '<button class="related-scroll-btn next"><svg class="icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>' +
+          '</div>';
+
+        const content = root.querySelector('.post-content');
+        if (content) content.insertAdjacentHTML('afterend', html);
+        
+        setTimeout(() => {
+            const grid = document.getElementById('relatedGrid');
+            const prevBtn = document.querySelector('.related-scroll-btn.prev');
+            const nextBtn = document.querySelector('.related-scroll-btn.next');
+            if(grid && prevBtn && nextBtn) {
+                prevBtn.onclick = () => grid.scrollBy({left: -300, behavior:'smooth'});
+                nextBtn.onclick = () => grid.scrollBy({left: 300, behavior:'smooth'});
+            }
+        }, 500);
+      }
+
+      function renderSinglePost(post) {
+        STATE.currentPost = post;
+
+        const container = document.getElementById('postContentContainer');
+        const primaryLabel = getPrimaryVisibleLabel(post.labels);
+        const metaDate = formatPostMetaDate(post.published);
+        const labelHtml = buildLabelHtml(primaryLabel);
+        const metaTopHtml = labelHtml
+          ? '<div class="post-meta-top"><div class="label-stack">' + labelHtml + '</div></div>'
+          : '';
+        const metaDateHtml = metaDate ? '<div class="post-meta-date-line">' + escapeHtml(metaDate) + '</div>' : '';
+        const url = post.url || location.href;
+
+        container.innerHTML =
+          '<div class="post-card">' +
+            '<div class="post-header">' +
+              '<div class="post-meta-row">' +
+                metaTopHtml +
+                '<div class="post-actions">' +
+                  '<button class="action-btn js-share" title="Share" aria-label="Share" type="button"' +
+                          ' data-share-url="' + escapeHtml(url) + '"' +
+                          ' data-share-title="' + escapeHtml(post.title) + '">' +
+                    '<svg class="icon" viewBox="0 0 24 24">' +
+                      '<circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>' +
+                    '</svg>' +
+                  '</button>' +
+                '</div>' +
+              '</div>' +
+              '<h1 class="post-title">' + escapeHtml(post.title) + '</h1>' +
+              metaDateHtml +
+              '<div class="post-meta-bottom">' +
+                '<span class="post-meta-author">' + escapeHtml(post.author) + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="post-content">' + (post.contentHtml || '') + '</div>' +
+          '</div>';
+
+        applyMarkdownIfNeeded(post);
+
+        // Image Fade in
+        container.querySelectorAll('img').forEach(img => {
+            img.onload = () => img.classList.add('loaded');
+        });
+
+        // Setup Comments
+        STATE.currentPostIdForComments = post.postId;
+        loadComments(post);
+
+        enhancePostContent(post);
+        buildTOC();
+        buildRelated(post);
+
+        // mark read
+        STATE.readMap[String(post.postId)] = Date.now();
+        saveReadMap();
+
+        // restore reading position (if exists)
+        const savedY = STATE.progressMap[String(post.postId)];
+        if (typeof savedY === 'number' && savedY > 0) {
+          window.scrollTo(0, 0);
+          toast('이전 읽던 위치로 이동할까요?', '이동', function () {
+            window.scrollTo(0, savedY);
+          }, '처음부터');
+        } else {
+          window.scrollTo(0, 0);
+        }
+
+        updateReadingProgressBar();
+      }
+
+      function extractPostIdFromBloggerDom() {
+        const srcEl = document.querySelector('.comment-form-src');
+        if (srcEl) {
+          const pid = srcEl.getAttribute('data-post-id');
+          if (pid) return pid;
+        }
+        const el = document.querySelector('[id^="post-"]');
+        if (!el) return '';
+        const m = el.id.match(/^post-(\d+)/);
+        return m ? m[1] : '';
+      }
+
+      function extractPostIdFromUrl() {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        const target = normalizeUrl(canonical ? canonical.href : location.href);
+        const found = STATE.posts.find(p => normalizeUrl(p.url) === target);
+        return found ? found.postId : '';
+      }
+
+      // ---------- Share ----------
+      function openShareOptions() {
+        const modal = document.getElementById('shareOptionsModal');
+        if(modal) {
+            openOverlay(modal);
+            // Dynamic binding for modal buttons (context aware)
+            const copyBtn = document.getElementById('shareCopyBtn');
+            const twBtn = document.getElementById('shareTwitterBtn');
+            const natBtn = document.getElementById('shareNativeBtn');
+            const url = location.href;
+            const title = document.title;
+            
+            if(copyBtn) copyBtn.onclick = () => { copyLink(url); closeTopOverlay(); };
+            if(twBtn) twBtn.onclick = () => { window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(title)+'&url='+encodeURIComponent(url), '_blank'); closeTopOverlay(); };
+            if(natBtn) natBtn.onclick = () => { 
+                if(navigator.share) navigator.share({title, url}).catch(()=>{}); 
+                else toast('이 브라우저에서는 지원하지 않습니다.');
+                closeTopOverlay();
+            };
+            const closeBtn = document.getElementById('shareCloseBtn');
+            if(closeBtn) closeBtn.onclick = () => closeTopOverlay();
+        }
+      }
+      
+      async function handleShare(btn) {
+        // Trigger share modal
+        openShareOptions();
+      }
+
+      // ---------- Open/Close post ----------
+      async function openPostById(postId, { skipPush } = { skipPush: false }) {
+        if (!postId) return;
+
+        if (!STATE.isReading) {
+          STATE.listScrollY = window.scrollY || 0;
+          STATE.listUrl = location.href;
+          STATE.lastFocusEl = document.activeElement; 
+        }
+
+        setReadingMode(true);
+        setLoadingBar(0);
+
+        // try find in memory
+        let post = STATE.posts.find(p => String(p.postId) === String(postId));
+        document.getElementById('postContentContainer').innerHTML = '<div class="loading-spinner"></div>';
+
+        try {
+          // ensure full content
+          post = await fetchSinglePost(postId);
+        } catch (e) {
+          if (post && post.contentHtml) {
+            // fallback to existing data
+          } else {
+            document.getElementById('postContentContainer').innerHTML = '<div class="error-msg">글을 불러오지 못했습니다.</div>';
+            return;
+          }
+        }
+
+        renderSinglePost(post);
+
+        if (!skipPush) {
+          try {
+            history.pushState({ view: 'post', postId: String(post.postId) }, '', post.url || (location.pathname + '#post-' + post.postId));
+          } catch (e) {}
+        }
+      }
+
+      function closePost({ skipPush } = { skipPush: false }) {
+        cleanupTOC();
+        setReadingMode(false);
+        STATE.currentPost = null;
+        setLoadingBar(0);
+
+        // restore list scroll
+        window.scrollTo(0, STATE.listScrollY || 0);
+        
+        if(STATE.lastFocusEl) STATE.lastFocusEl.focus();
+
+        // restore list url (with state)
+        if (!skipPush) {
+          const url = buildListUrlFromState();
+          try { history.pushState({ view: 'list' }, '', url); } catch (e) {}
+        }
+      }
+
+      // ---------- Modal / Lightbox (Focus trap) ----------
+      function getFocusable(container) {
+        return Array.from(container.querySelectorAll('a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'))
+          .filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true');
+      }
+
+      function openOverlay(overlayEl) {
+        if (!overlayEl) return;
+        STATE.lastFocusEl = document.activeElement;
+        overlayEl.classList.add('active');
+        overlayEl.setAttribute('aria-hidden', 'false');
+        STATE.modalStack.push(overlayEl);
+      }
+
+      function closeOverlay(overlayEl) {
+        if (!overlayEl) return;
+        overlayEl.classList.remove('active');
+        overlayEl.setAttribute('aria-hidden', 'true');
+        const idx = STATE.modalStack.indexOf(overlayEl);
+        if (idx >= 0) STATE.modalStack.splice(idx, 1);
+        const restore = STATE.lastFocusEl;
+        if (restore && restore.focus) setTimeout(function () { restore.focus(); }, 0);
+      }
+
+      function closeTopOverlay() {
+        if (!STATE.modalStack.length) return false;
+        const top = STATE.modalStack[STATE.modalStack.length - 1];
+        closeOverlay(top);
+        return true;
+      }
+
+      function trapTab(e) {
+        if (e.key !== 'Tab') return;
+        if (!STATE.modalStack.length) return;
+        const overlayEl = STATE.modalStack[STATE.modalStack.length - 1];
+        const focusables = getFocusable(overlayEl);
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+      
+      // Comments (Blogger API)
+      function extractCommentNumericId(value) {
+        if (!value) return '';
+        const str = String(value);
+        let m = str.match(/comment-(\d+)/);
+        if (m) return m[1];
+        m = str.match(/commentID=(\d+)/);
+        if (m) return m[1];
+        return '';
+      }
+
+      function getCommentNumericId(entry) {
+        const rawId = entry && entry.id && entry.id.$t ? entry.id.$t : '';
+        const idMatch = extractCommentNumericId(rawId);
+        if (idMatch) return idMatch;
+        const links = entry && entry.link ? entry.link : [];
+        for (let i = 0; i < links.length; i++) {
+          const href = links[i] && links[i].href ? String(links[i].href) : '';
+          const match = extractCommentNumericId(href);
+          if (match) return match;
+        }
+        return '';
+      }
+
+      function getParentCommentId(entry) {
+        const reply = entry && entry['thr$in-reply-to'] ? entry['thr$in-reply-to'] : null;
+        if (!reply) return '';
+        const href = reply.href || (reply.$t ? reply.$t : '');
+        const ref = reply.ref || '';
+        return extractCommentNumericId(href) || extractCommentNumericId(ref) || '';
+      }
+
+      function parseComment(entry) {
+        const authorObj = (entry && entry.author && entry.author[0]) ? entry.author[0] : {};
+        const rawAuthor = authorObj.name ? authorObj.name.$t : '';
+        const authorUri = authorObj.uri && authorObj.uri.$t ? authorObj.uri.$t : '';
+        const published = entry && entry.published ? entry.published.$t : '';
+        const publishedTs = published ? new Date(published).getTime() : 0;
+        const contentHtml = entry && entry.content ? entry.content.$t : (entry && entry.summary ? entry.summary.$t : '');
+        const commentId = getCommentNumericId(entry);
+        const parentId = getParentCommentId(entry);
+        const isAnonymous = !rawAuthor || rawAuthor.toLowerCase() === 'anonymous' || rawAuthor === '익명';
+        const anonSeed = authorUri || commentId || rawAuthor || parentId || published;
+        const anonIndex = anonSeed ? (hashString(anonSeed) % 99) + 1 : '';
+        const author = isAnonymous ? (anonIndex ? ('익명#' + anonIndex) : '익명') : rawAuthor;
+        const avatarSeed = authorUri || rawAuthor || commentId || published;
+        let avatar = (authorObj['gd$image'] && authorObj['gd$image'].src) ? authorObj['gd$image'].src : '';
+        if (isAnonymous) avatar = '';
+        const avatarColor = getAvatarColor(avatarSeed || anonSeed);
+        const avatarText = getAvatarText(author);
+        return {
+          commentId,
+          parentId,
+          author,
+          avatar,
+          avatarColor,
+          avatarText,
+          published,
+          publishedTs,
+          contentHtml: sanitizeCommentHtml(contentHtml),
+          isReply: !!parentId,
+          isAnonymous
+        };
+      }
+
+      function normalizeUrl(u) {
+        try {
+          const url = new URL(u, location.origin);
+          url.hash = '';
+          url.searchParams.delete('m');
+          const search = url.searchParams.toString();
+          return url.origin + url.pathname.replace(/\/$/, '') + (search ? '?' + search : '');
+        } catch (e) {
+          return String(u || '').replace(/#.*$/, '').replace(/([?&])m=\d+(&|$)/, '$1').replace(/[?&]$/, '').replace(/\/$/, '');
+        }
+      }
+
+      function getInlineCommentSrc(postId) {
+        const nodes = Array.from(document.querySelectorAll('.comment-form-src'));
+        if (!nodes.length) return '';
+        for (let i = 0; i < nodes.length; i++) {
+          const el = nodes[i];
+          const elPostId = el.getAttribute('data-post-id') || '';
+          if (postId && elPostId && String(elPostId) !== String(postId)) continue;
+          return el.getAttribute('data-comment-src') || '';
+        }
+        return nodes[0].getAttribute('data-comment-src') || '';
+      }
+
+      function addUrlParam(url, key, value) {
+        try {
+          const u = new URL(url, location.origin);
+          u.searchParams.set(key, value);
+          return u.href;
+        } catch (e) {
+          const sep = url.indexOf('?') === -1 ? '?' : '&';
+          return url + sep + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+        }
+      }
+
+      async function fetchCommentFormSrcFromUrl(url, postId) {
+        if (!url) return '';
+        try {
+          const resolved = new URL(url, location.origin);
+          const fetchUrl = (resolved.origin === location.origin) ? resolved.href : (resolved.pathname + resolved.search);
+          const res = await fetch(fetchUrl, { credentials: 'same-origin' });
+          if (!res.ok) return '';
+          const html = await res.text();
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const nodes = Array.from(doc.querySelectorAll('.comment-form-src'));
+          if (!nodes.length) return '';
+          for (let i = 0; i < nodes.length; i++) {
+            const el = nodes[i];
+            const elPostId = el.getAttribute('data-post-id') || '';
+            if (postId && elPostId && String(elPostId) !== String(postId)) continue;
+            return el.getAttribute('data-comment-src') || '';
+          }
+          return nodes[0].getAttribute('data-comment-src') || '';
+        } catch (e) {
+          return '';
+        }
+      }
+
+      async function getCommentFormSrc(post) {
+        const postId = post && post.postId ? post.postId : post;
+        if (post && post.commentFormSrc) return post.commentFormSrc;
+        let src = getInlineCommentSrc(postId);
+        if (!src && post && post.url) src = await fetchCommentFormSrcFromUrl(post.url, postId);
+        if (post && src) post.commentFormSrc = src;
+        return src || '';
+      }
+
+      function renderComments(comments) {
+        const list = document.getElementById('commentsList');
+        const countEl = document.getElementById('commentCount');
+        if (!list) return;
+        list.setAttribute('aria-busy', 'false');
+        if (countEl) countEl.textContent = comments.length ? '(' + comments.length + ')' : '(0)';
+
+        if (!comments.length) {
+          list.innerHTML = '<div class="empty-state"><p>첫 댓글을 남겨보세요.</p></div>';
+          return;
+        }
+
+        list.innerHTML = comments.map(function (c) {
+          const depth = c.depth || (c.isReply ? 1 : 0);
+          const depthAttr = depth ? ' style="--reply-depth:' + depth + ';"' : '';
+          const avatarHtml = c.avatar
+            ? '<img class="comment-avatar" src="' + escapeHtml(c.avatar) + '" alt="' + escapeHtml(c.author) + '" loading="lazy" decoding="async"/>'
+            : '<div class="comment-avatar comment-avatar-empty" style="--avatar-bg:' + escapeHtml(c.avatarColor) + ';">' + escapeHtml(c.avatarText) + '</div>';
+          const replyBtn = c.commentId ? '<button class="reply-btn" type="button" data-comment-reply="' + escapeHtml(c.commentId) + '">답글</button>' : '';
+          const editBtn = (!c.isAnonymous && c.commentId) ? '<button class="comment-action-btn" type="button" data-comment-edit="' + escapeHtml(c.commentId) + '">수정</button>' : '';
+          const deleteBtn = (!c.isAnonymous && c.commentId) ? '<button class="comment-action-btn" type="button" data-comment-delete="' + escapeHtml(c.commentId) + '">삭제</button>' : '';
+          const anonNote = c.isAnonymous ? '<span class="comment-note">익명은 수정/삭제 불가</span>' : '';
+          const actionHtml = (replyBtn || editBtn || deleteBtn || anonNote)
+            ? '<div class="comment-actions">' + replyBtn + editBtn + deleteBtn + anonNote + '</div>'
+            : '';
+          return (
+            '<div class="comment-item' + (depth ? ' reply' : '') + '"' + depthAttr + '>' +
+              avatarHtml +
+              '<div class="comment-content">' +
+                '<div class="comment-meta">' +
+                  '<span class="comment-author">' + escapeHtml(c.author) + '</span>' +
+                  '<span class="comment-date">' + escapeHtml(formatTime(c.published)) + '</span>' +
+                '</div>' +
+                '<div class="comment-body">' + c.contentHtml + '</div>' +
+                actionHtml +
+              '</div>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      function orderComments(comments) {
+        const byId = {};
+        const children = {};
+        const ordered = [];
+        const seen = new Set();
+        const sortByDate = (a, b) => (a.publishedTs || 0) - (b.publishedTs || 0);
+
+        comments.forEach(c => {
+          if (c && c.commentId) byId[c.commentId] = c;
+        });
+
+        comments.forEach(c => {
+          const pid = c && c.parentId ? c.parentId : '';
+          if (pid && byId[pid]) {
+            if (!children[pid]) children[pid] = [];
+            children[pid].push(c);
+          }
+        });
+
+        const roots = comments.filter(c => !(c && c.parentId && byId[c.parentId]));
+        roots.sort(sortByDate);
+        Object.keys(children).forEach(id => children[id].sort(sortByDate));
+
+        function addThread(node, depth) {
+          node.depth = depth;
+          ordered.push(node);
+          seen.add(node);
+          const kids = children[node.commentId] || [];
+          for (let i = 0; i < kids.length; i++) addThread(kids[i], depth + 1);
+        }
+
+        for (let i = 0; i < roots.length; i++) addThread(roots[i], 0);
+
+        if (ordered.length < comments.length) {
+          comments.forEach(c => {
+            if (!seen.has(c)) {
+              c.depth = c.isReply ? 1 : 0;
+              ordered.push(c);
+            }
+          });
+        }
+
+        return ordered;
+      }
+
+      async function setupCommentForm(post) {
+        const wrap = document.getElementById('commentIframeWrap');
+        const frame = document.getElementById('commentInlineFrame');
+        const fallback = document.getElementById('commentFormFallback');
+        const fallbackLink = document.getElementById('commentFormFallbackLink');
+        if (!wrap || !frame) return;
+        const postId = post && post.postId ? post.postId : post;
+        if (fallbackLink && post && post.url) fallbackLink.setAttribute('href', post.url + '#comment-form');
+        const src = await getCommentFormSrc(post);
+        if (!src) {
+          if (frame.getAttribute('src')) frame.removeAttribute('src');
+          frame.style.display = 'none';
+          if (fallback) fallback.classList.remove('hidden');
+          return;
+        }
+        if (fallback) fallback.classList.add('hidden');
+        frame.style.display = 'block';
+        frame.dataset.baseSrc = src;
+        bindCommentFrame(frame);
+        if (frame.getAttribute('src') !== src) frame.setAttribute('src', src);
+        setCommentFormMode('new');
+      }
+
+      function buildCommentFrameCss() {
+        const rootStyles = getComputedStyle(document.documentElement);
+        const bg = rootStyles.getPropertyValue('--bg-body').trim() || '#ffffff';
+        const surface = rootStyles.getPropertyValue('--bg-surface').trim() || '#f5f5f5';
+        const text = rootStyles.getPropertyValue('--text-primary').trim() || '#111111';
+        const textSecondary = rootStyles.getPropertyValue('--text-secondary').trim() || '#555555';
+        const border = rootStyles.getPropertyValue('--border-subtle').trim() || 'rgba(0,0,0,0.08)';
+        const accent = rootStyles.getPropertyValue('--accent-primary').trim() || '#5f27cd';
+        const font = rootStyles.getPropertyValue('--font-sans').trim() || 'sans-serif';
+        return (
+          ':root{' +
+            '--c-bg:' + bg + ';' +
+            '--c-surface:' + surface + ';' +
+            '--c-text:' + text + ';' +
+            '--c-text-secondary:' + textSecondary + ';' +
+            '--c-border:' + border + ';' +
+            '--c-accent:' + accent + ';' +
+            '--c-font:' + font + ';' +
+          '}' +
+          'html,body{background:var(--c-bg);color:var(--c-text);font-family:var(--c-font);}' +
+          'a{color:var(--c-accent);}' +
+          'input,textarea{width:100%;border:1px solid var(--c-border);border-radius:10px;padding:10px 12px;font-family:var(--c-font);font-size:14px;color:var(--c-text);background:var(--c-surface);}' +
+          'button,input[type="submit"]{border-radius:999px;border:1px solid var(--c-border);background:var(--c-surface);padding:6px 12px;color:var(--c-text-secondary);font-weight:700;}' +
+          'button:hover,input[type="submit"]:hover{border-color:var(--c-accent);color:var(--c-text);}' +
+          '.comment-form{padding:12px;}'
+        );
+      }
+
+      function applyCommentFrameStyles(frame) {
+        if (!frame) return;
+        try {
+          const doc = frame.contentDocument;
+          if (!doc || !doc.head) return;
+          let styleEl = doc.getElementById('custom-comment-style');
+          if (!styleEl) {
+            styleEl = doc.createElement('style');
+            styleEl.id = 'custom-comment-style';
+            doc.head.appendChild(styleEl);
+          }
+          styleEl.textContent = buildCommentFrameCss();
+        } catch (e) {
+          // Cross-origin or blocked: silently skip.
+        }
+      }
+
+      function bindCommentFrame(frame) {
+        if (!frame || frame.dataset.bound === '1') return;
+        frame.dataset.bound = '1';
+        frame.addEventListener('load', function () { applyCommentFrameStyles(frame); });
+      }
+
+      function setCommentFormMode(mode, targetId) {
+        STATE.commentFormMode = mode || 'new';
+        STATE.commentFormTarget = targetId || '';
+        const textEl = document.getElementById('commentFormModeText');
+        const resetBtn = document.getElementById('commentFormReset');
+        if (textEl) {
+          if (STATE.commentFormMode === 'reply') textEl.textContent = '답글 작성';
+          else if (STATE.commentFormMode === 'edit') textEl.textContent = '댓글 수정';
+          else if (STATE.commentFormMode === 'delete') textEl.textContent = '댓글 삭제';
+          else textEl.textContent = '일반 댓글';
+        }
+        if (resetBtn) resetBtn.classList.toggle('hidden', STATE.commentFormMode === 'new');
+      }
+
+      function resetCommentFormToBase({ scroll } = { scroll: false }) {
+        const frame = document.getElementById('commentInlineFrame');
+        const baseSrc = frame ? (frame.dataset.baseSrc || '') : '';
+        if (frame && baseSrc && frame.getAttribute('src') !== baseSrc) frame.setAttribute('src', baseSrc);
+        setCommentFormMode('new', '');
+        if (scroll) {
+          const container = document.getElementById('commentsContainer');
+          if (container) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function loadComments(post, { force } = { force: false }) {
+        const list = document.getElementById('commentsList');
+        const countEl = document.getElementById('commentCount');
+        if (!list) return;
+        list.setAttribute('aria-busy', 'true');
+        list.innerHTML = '<div class="loading-spinner"></div>';
+        if (countEl) countEl.textContent = '(...)';
+
+        const postId = post && post.postId ? post.postId : post;
+        if (!postId) {
+          list.innerHTML = '<div class="empty-state"><p>댓글을 불러올 수 없습니다.</p></div>';
+          list.setAttribute('aria-busy', 'false');
+          if (countEl) countEl.textContent = '(0)';
+          return;
+        }
+
+        const cacheKey = COMMENT_CACHE_PREFIX + String(postId);
+        const cached = !force ? cacheGet(cacheKey, COMMENT_CACHE_TTL_MS) : null;
+        if (cached && cached.entries) {
+          const comments = orderComments(cached.entries.map(parseComment));
+          renderComments(comments);
+        } else {
+          const url = '/feeds/' + encodeURIComponent(postId) + '/comments/default?alt=json';
+          fetchJson(url).then(function (json) {
+            const entries = (json && json.feed && json.feed.entry) ? json.feed.entry : [];
+            cacheSet(cacheKey, { entries: entries });
+            const comments = orderComments(entries.map(parseComment));
+            renderComments(comments);
+          }).catch(function () {
+            list.innerHTML = '<div class="empty-state"><p>댓글을 불러오지 못했습니다.</p></div>';
+            list.setAttribute('aria-busy', 'false');
+            if (countEl) countEl.textContent = '(0)';
+          });
+        }
+
+        setupCommentForm(post);
+      }
+
+      function toggleCommentForm({ open, scroll } = { open: true, scroll: true }) {
+        const wrap = document.getElementById('commentIframeWrap');
+        if (!wrap) return;
+        const shouldOpen = (open === undefined) ? true : open;
+        wrap.classList.toggle('hidden', !shouldOpen);
+        if (scroll) {
+          const container = document.getElementById('commentsContainer');
+          if (container) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      async function openReplyForm(parentId) {
+        if (!STATE.currentPost || !parentId) return;
+        toggleCommentForm({ open: true, scroll: true });
+        await setupCommentForm(STATE.currentPost);
+        const frame = document.getElementById('commentInlineFrame');
+        const baseSrc = frame ? (frame.dataset.baseSrc || frame.getAttribute('src') || '') : '';
+        if (!baseSrc) return;
+        if (!/^\d+$/.test(String(parentId))) {
+          toast('이 댓글은 답글을 지원하지 않습니다.');
+          return;
+        }
+        const replySrc = addUrlParam(baseSrc, 'parentID', parentId);
+        if (frame && frame.getAttribute('src') !== replySrc) frame.setAttribute('src', replySrc);
+        setCommentFormMode('reply', parentId);
+      }
+
+      async function openEditForm(commentId) {
+        if (!STATE.currentPost || !commentId) return;
+        toggleCommentForm({ open: true, scroll: true });
+        await setupCommentForm(STATE.currentPost);
+        const frame = document.getElementById('commentInlineFrame');
+        const baseSrc = frame ? (frame.dataset.baseSrc || frame.getAttribute('src') || '') : '';
+        if (!baseSrc) return;
+        const editSrc = addUrlParam(baseSrc, 'commentID', commentId);
+        if (frame && frame.getAttribute('src') !== editSrc) frame.setAttribute('src', editSrc);
+        setCommentFormMode('edit', commentId);
+      }
+
+      async function openDeleteForm(commentId) {
+        if (!STATE.currentPost || !commentId) return;
+        toggleCommentForm({ open: true, scroll: true });
+        await setupCommentForm(STATE.currentPost);
+        const frame = document.getElementById('commentInlineFrame');
+        const baseSrc = frame ? (frame.dataset.baseSrc || frame.getAttribute('src') || '') : '';
+        if (!baseSrc) return;
+        const deleteSrc = addUrlParam(addUrlParam(baseSrc, 'commentID', commentId), 'action', 'delete');
+        if (frame && frame.getAttribute('src') !== deleteSrc) frame.setAttribute('src', deleteSrc);
+        setCommentFormMode('delete', commentId);
+      }
+
+      function openCommentPopup({ scroll } = { scroll: true }) {
+        // Backwards-compatible name: now opens inline comment form.
+        toggleCommentForm({ open: true, scroll: scroll !== false });
+        if (STATE.currentPost) {
+          setupCommentForm(STATE.currentPost).then(function () {
+            resetCommentFormToBase({ scroll: false });
+          });
+        } else {
+          resetCommentFormToBase({ scroll: false });
+        }
+      }
+      window.openCommentPopup = openCommentPopup;
+
+      // ---------- Events ----------
+      function bindEvents() {
+        const tabLayers = document.getElementById('tabLayers');
+        if(tabLayers) tabLayers.addEventListener('click', function (e) {
+          const b = e.target.closest('.tab-btn'); if (!b) return;
+          const layer = e.target.closest('.tabs');
+          const level = parseInt(layer.dataset.level || '0', 10);
+
+          const basePath = (STATE.hoverPath && STATE.hoverPath.length) ? STATE.hoverPath : STATE.selectedPath;
+          STATE.selectedPath = basePath.slice(0, level);
+          STATE.selectedPath.push(b.dataset.tab);
+          autoSelectAllIfNeeded();
+          STATE.listPath = STATE.selectedPath.slice();
+          STATE.hoverPath = [];
+          clearTimeout(STATE.hoverTimer);
+          clearTimeout(STATE.hoverClearTimer);
+
+          if (STATE.isReading) closePost({ skipPush: false });
+
+          STATE.page = 1;
+          updateView({ syncUrl: true });
+        });
+        if (tabLayers) tabLayers.addEventListener('mouseover', function (e) {
+          if (!CAN_HOVER) return;
+          const b = e.target.closest('.tab-btn'); if (!b) return;
+          const layer = e.target.closest('.tabs');
+          const level = parseInt(layer.dataset.level || '0', 10);
+          const targetId = b.dataset.tab;
+          STATE.hoverTargetId = targetId;
+          STATE.hoverTargetLevel = level;
+          clearTimeout(STATE.hoverTimer);
+          clearTimeout(STATE.hoverClearTimer);
+          const basePath = (STATE.hoverPath && STATE.hoverPath.length) ? STATE.hoverPath : STATE.selectedPath;
+          const previewPath = basePath.slice(0, level);
+          previewPath.push(targetId);
+          if (isSamePath(STATE.hoverPath, previewPath) || isSamePath(STATE.selectedPath, previewPath)) return;
+          STATE.hoverTimer = setTimeout(function () {
+            if (STATE.hoverTargetId !== targetId || STATE.hoverTargetLevel !== level) return;
+            const activeBase = (STATE.hoverPath && STATE.hoverPath.length) ? STATE.hoverPath : STATE.selectedPath;
+            const hoverPath = activeBase.slice(0, level);
+            hoverPath.push(targetId);
+            if (isSamePath(STATE.hoverPath, hoverPath)) return;
+            STATE.hoverPath = hoverPath;
+            renderTabLayers();
+          }, 60);
+        });
+        if (tabLayers) tabLayers.addEventListener('focusin', function (e) {
+          const b = e.target.closest('.tab-btn'); if (!b) return;
+          const layer = e.target.closest('.tabs');
+          const level = parseInt(layer.dataset.level || '0', 10);
+          const basePath = (STATE.hoverPath && STATE.hoverPath.length) ? STATE.hoverPath : STATE.selectedPath;
+          const focusPath = basePath.slice(0, level);
+          focusPath.push(b.dataset.tab);
+          STATE.hoverPath = focusPath;
+          renderTabLayers();
+        });
+        if (tabLayers) tabLayers.addEventListener('mouseleave', function () {
+          if (!CAN_HOVER) return;
+          if ((Date.now() - STATE.lastTabRenderAt) < 150) return;
+          clearTimeout(STATE.hoverTimer);
+          clearTimeout(STATE.hoverClearTimer);
+          STATE.hoverClearTimer = setTimeout(function () {
+            if (STATE.hoverPath && STATE.hoverPath.length) {
+              STATE.hoverPath = [];
+              renderTabLayers();
+            }
+          }, 80);
+        });
+
+        const viewToggle = document.querySelector('.view-toggle');
+        if(viewToggle) viewToggle.addEventListener('click', function (e) {
+          const b = e.target.closest('.view-btn'); if (!b) return;
+          STATE.viewMode = b.dataset.view;
+          updateView({ syncUrl: true });
+        });
+
+        const filterContainer = document.getElementById('filterContainer');
+        if(filterContainer) filterContainer.addEventListener('click', function (e) {
+          const b = e.target.closest('.filter-chip'); if (!b) return;
+          STATE.filterMode = b.dataset.filter;
+          STATE.page = 1;
+          updateView({ syncUrl: true });
+        });
+
+        const sortSelect = document.getElementById('sortSelect');
+        if(sortSelect) sortSelect.addEventListener('change', function (e) {
+          STATE.sortMode = e.target.value;
+          STATE.page = 1;
+          updateView({ syncUrl: true });
+        });
+
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if(loadMoreBtn) loadMoreBtn.addEventListener('click', async function () {
+            // Simply increase page count to show more from memory
+            STATE.page++;
+            renderContent();
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+
+        function syncSearchUI() {
+          const v = searchInput.value || '';
+          searchClear.classList.toggle('visible', v.length > 0);
+        }
+        searchInput.addEventListener('input', function () {
+          syncSearchUI();
+          debounce(function () {
+            STATE.searchQuery = searchInput.value || '';
+            STATE.page = 1;
+            updateView({ syncUrl: true });
+          }, 120);
+        });
+        searchClear.addEventListener('click', function () {
+          searchInput.value = '';
+          syncSearchUI();
+          STATE.searchQuery = '';
+          STATE.page = 1;
+          updateView({ syncUrl: true });
+          searchInput.focus();
+        });
+
+        const commentToggle = document.getElementById('commentFormToggle');
+        if (commentToggle) commentToggle.addEventListener('click', function () {
+          openCommentPopup({ scroll: false });
+        });
+
+        const commentRefresh = document.getElementById('commentRefreshBtn');
+        if (commentRefresh) commentRefresh.addEventListener('click', function () {
+          if (STATE.currentPost) loadComments(STATE.currentPost, { force: true });
+        });
+
+        const commentReset = document.getElementById('commentFormReset');
+        if (commentReset) commentReset.addEventListener('click', function () {
+          resetCommentFormToBase({ scroll: true });
+        });
+
+        document.getElementById('themeToggle').addEventListener('click', function () {
+          CONFIG.theme = (CONFIG.theme === 'dark') ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', CONFIG.theme);
+          try { localStorage.setItem(STORAGE_THEME, CONFIG.theme); } catch (e) {}
+        });
+
+        const infoModal = document.getElementById('infoModal');
+        document.getElementById('infoBtn').addEventListener('click', function () { openOverlay(infoModal); });
+        document.getElementById('infoCloseBtn').addEventListener('click', function () { closeOverlay(infoModal); });
+        infoModal.addEventListener('click', function (e) { if (e.target && e.target.id === 'infoModal') closeOverlay(infoModal); });
+        
+        const shareModal = document.getElementById('shareOptionsModal');
+        document.getElementById('shareCloseBtn').addEventListener('click', function () { closeOverlay(shareModal); });
+        shareModal.addEventListener('click', function (e) { if (e.target && e.target.id === 'shareOptionsModal') closeOverlay(shareModal); });
+
+        const backBtn = document.getElementById('backToListBtn');
+        if(backBtn) backBtn.addEventListener('click', function () { closePost({ skipPush: false }); });
+
+        document.addEventListener('click', function (e) {
+          const tocLink = e.target.closest('.toc-item');
+          if (tocLink) {
+            const href = tocLink.getAttribute('href') || '';
+            if (href.charAt(0) === '#') {
+              const id = href.slice(1);
+              const target = document.getElementById(id);
+              if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                try { history.replaceState(history.state || {}, '', location.pathname + location.search + '#' + id); } catch (err) {}
+                return;
+              }
+            }
+          }
+          const openEl = e.target.closest('[data-open-post="1"]');
+          if (openEl) {
+            openPostById(openEl.getAttribute('data-post-id'), { skipPush: false });
+            return;
+          }
+
+          const replyBtn = e.target.closest('[data-comment-reply]');
+          if (replyBtn) {
+            openReplyForm(replyBtn.getAttribute('data-comment-reply'));
+            return;
+          }
+          
+          const editBtn = e.target.closest('[data-comment-edit]');
+          if (editBtn) {
+            openEditForm(editBtn.getAttribute('data-comment-edit'));
+            return;
+          }
+
+          const deleteBtn = e.target.closest('[data-comment-delete]');
+          if (deleteBtn) {
+            const targetId = deleteBtn.getAttribute('data-comment-delete');
+            toast('댓글을 삭제할까요?', '삭제', function () { openDeleteForm(targetId); }, '취소');
+            return;
+          }
+
+          const shareBtn = e.target.closest('.js-share');
+          if (shareBtn) { openShareOptions(); return; }
+
+          const codeCopy = e.target.closest('[data-code-copy="1"]');
+          if (codeCopy) {
+            const pre = codeCopy.closest('pre');
+            const txt = pre ? pre.innerText : '';
+            copyLink(txt);
+            return;
+          }
+
+          const img = e.target.closest('#postContentContainer .post-content img');
+          if (img) {
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = img.src;
+            openOverlay(lb);
+            return;
+          }
+          
+          if(e.target.closest('#mobileBackBtn')) closePost();
+          if(e.target.closest('#mobileShareBtn')) openShareOptions();
+          if(e.target.closest('#mobileCommentBtn')) openCommentPopup();
+          if(e.target.closest('#mobileTopBtn')) window.scrollTo({top:0, behavior:'smooth'});
+        });
+
+        const btnTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 300) btnTop.classList.add('visible'); else btnTop.classList.remove('visible');
+          if (STATE.isReading) updateReadingProgressBar();
+        });
+        btnTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        document.addEventListener('keydown', function (e) {
+          trapTab(e);
+          if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.closest && e.target.closest('[data-key-action="1"]')) {
+            e.preventDefault();
+            const el = e.target.closest('[data-key-action="1"]');
+            if (el && typeof el.click === 'function') el.click();
+            return;
+          }
+          if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            const t = e.target;
+            const tag = t && t.tagName ? t.tagName.toLowerCase() : '';
+            if (tag !== 'input' && tag !== 'textarea' && !t.isContentEditable) {
+              e.preventDefault();
+              document.getElementById('searchInput').focus();
+              return;
+            }
+          }
+          if (e.key === 'Escape') {
+            const closed = closeTopOverlay();
+            if (closed) { e.preventDefault(); return; }
+            if (STATE.isReading) { closePost({ skipPush: false }); e.preventDefault(); return; }
+          }
+        });
+
+        window.addEventListener('popstate', function (ev) {
+          const st = ev.state || {};
+          if (st.view === 'post' && st.postId) {
+            openPostById(st.postId, { skipPush: true });
+            return;
+          }
+
+          if (STATE.isReading) setReadingMode(false);
+          const q = parseListQuery();
+          if (q.selectedPath) {
+            STATE.selectedPath = q.selectedPath;
+            STATE.listPath = q.selectedPath.slice();
+          }
+          if (typeof q.searchQuery === 'string') STATE.searchQuery = q.searchQuery;
+          if (q.viewMode) STATE.viewMode = q.viewMode;
+          if (q.filterMode) STATE.filterMode = q.filterMode;
+          if (q.sortMode) STATE.sortMode = q.sortMode;
+          if (q.page) STATE.page = q.page;
+
+          const si = document.getElementById('searchInput');
+          si.value = STATE.searchQuery || '';
+          document.getElementById('searchClear').classList.toggle('visible', (si.value || '').length > 0);
+
+          updateView({ syncUrl: false });
+        });
+      }
+
+      // ---------- Init ----------
+      async function init() {
+        document.getElementById('year').textContent = String(new Date().getFullYear());
+
+        loadReadMap();
+        loadProgressMap();
+        loadReaderPrefs();
+        applyReaderPrefs();
+
+        restorePrefs();
+
+        const urlState = parseListQuery();
+        if (urlState.selectedPath) {
+          STATE.selectedPath = urlState.selectedPath;
+          STATE.listPath = urlState.selectedPath.slice();
+        }
+        if (typeof urlState.searchQuery === 'string') STATE.searchQuery = urlState.searchQuery;
+        if (urlState.viewMode) STATE.viewMode = urlState.viewMode;
+        if (urlState.filterMode) STATE.filterMode = urlState.filterMode;
+        if (urlState.sortMode) STATE.sortMode = urlState.sortMode;
+        if (urlState.page) STATE.page = urlState.page;
+
+        document.documentElement.setAttribute('data-theme', CONFIG.theme);
+        try { localStorage.setItem(STORAGE_THEME, CONFIG.theme); } catch (e) {}
+
+        const searchInput = document.getElementById('searchInput');
+        searchInput.value = STATE.searchQuery || '';
+        document.getElementById('searchClear').classList.toggle('visible', (searchInput.value || '').length > 0);
+
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) sortSelect.value = STATE.sortMode;
+
+        bindEvents();
+
+        STATE.listUrl = location.href;
+
+        // SINGLE FETCH LOGIC
+        await loadAllPosts(false, isReloadNavigation());
+
+        // item page direct open (also handle SPA post URL on reload)
+        const pageType = document.body.getAttribute('data-page') || '';
+        let pid = '';
+        if (pageType === 'item') {
+          pid = extractPostIdFromBloggerDom();
+          if (!pid) pid = extractPostIdFromUrl();
+        } else {
+          pid = extractPostIdFromUrl();
+        }
+        if (pid) {
+          try { history.replaceState({ view: 'post', postId: String(pid) }, '', location.href); } catch (e) {}
+          await openPostById(pid, { skipPush: true });
+        } else {
+          if (pageType === 'item') console.warn('postId parse failed: fallback to list view');
+          try { history.replaceState({ view: 'list' }, '', buildListUrlFromState()); } catch (e) {}
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', init);
+    })();
+  //]]></script>
+</body>
+</html>
